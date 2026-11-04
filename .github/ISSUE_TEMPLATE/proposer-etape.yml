@@ -1,0 +1,36 @@
+name: Proposer une étape
+description: Ajouter ou modifier une étape de la roadmap
+title: "[Étape] "
+labels: ["contenu", "etape"]
+body:
+  - type: dropdown
+    id: piste
+    attributes:
+      label: Piste
+      options: ["Tronc commun", "Défensive (SOC)", "Offensive", "Forensic", "GRC"]
+    validations:
+      required: true
+  - type: input
+    id: titre
+    attributes:
+      label: Titre de l'étape
+    validations:
+      required: true
+  - type: textarea
+    id: competences
+    attributes:
+      label: Compétences visées
+      description: Une par ligne
+    validations:
+      required: true
+  - type: textarea
+    id: ressources
+    attributes:
+      label: Ressources et labs gratuits proposés
+  - type: input
+    id: validation
+    attributes:
+      label: Critère de validation
+      description: Ce que l'étudiant doit réussir pour valider l'étape
+    validations:
+      required: true

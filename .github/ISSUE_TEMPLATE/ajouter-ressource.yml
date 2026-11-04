@@ -1,0 +1,50 @@
+name: Ajouter une ressource
+description: Proposer un cours, une vidéo, une doc ou un lab pour une étape
+title: "[Ressource] "
+labels: ["contenu", "ressource"]
+body:
+  - type: input
+    id: etape
+    attributes:
+      label: Étape concernée
+      description: Le code de l'étape, par exemple TC-07
+      placeholder: TC-07
+    validations:
+      required: true
+  - type: input
+    id: titre
+    attributes:
+      label: Nom de la ressource
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Lien (https)
+    validations:
+      required: true
+  - type: dropdown
+    id: langue
+    attributes:
+      label: Langue
+      options: ["Français", "Anglais"]
+    validations:
+      required: true
+  - type: dropdown
+    id: gratuit
+    attributes:
+      label: Accès
+      options: ["Gratuit", "Gratuit en partie"]
+    validations:
+      required: true
+  - type: textarea
+    id: pourquoi
+    attributes:
+      label: Pourquoi elle est utile pour cette étape
+  - type: checkboxes
+    id: ethique
+    attributes:
+      label: Vérification
+      options:
+        - label: La ressource est légale et ne pousse pas à attaquer un système réel
+          required: true

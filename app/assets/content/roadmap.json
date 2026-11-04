@@ -1,0 +1,175 @@
+{
+  "version": "2026.11.1",
+  "updated": "2026-11-04",
+  "language": "fr",
+  "tracks": [
+    {
+      "id": "tronc-commun",
+      "title": "Tronc commun",
+      "levels": ["BTS1", "BTS2", "L1", "L2", "L3", "AUTO"],
+      "entry_points": {
+        "BTS1": "tc-01",
+        "AUTO": "tc-01",
+        "L1": "tc-02",
+        "L2": "tc-02",
+        "BTS2": "tc-03",
+        "L3": "tc-05"
+      },
+      "steps": [
+        {
+          "id": "tc-01",
+          "code": "TC-01",
+          "title": "Bases des réseaux",
+          "summary": "Comprendre comment deux machines se parlent. Sans ça, impossible de comprendre une attaque ou une défense.",
+          "duration_weeks": 3,
+          "skills": ["Modèles OSI et TCP/IP", "Adressage IP et sous-réseaux", "DNS, DHCP et HTTP", "Lire une capture réseau"],
+          "requires": [],
+          "resources": [
+            { "type": "cours", "title": "TryHackMe · What is Networking?", "url": "https://tryhackme.com/room/whatisnetworking", "lang": "en", "free": true },
+            { "type": "video", "title": "Professor Messer · cours vidéo Network+", "url": "https://www.professormesser.com/", "lang": "en", "free": true }
+          ],
+          "labs": [
+            { "platform": "tryhackme", "title": "Introductory Networking", "url": "https://tryhackme.com/room/introtonetworking", "lang": "en", "free": true },
+            { "platform": "root-me", "title": "Challenges Réseau", "url": "https://www.root-me.org/fr/Challenges/Reseau/", "lang": "fr", "free": true }
+          ],
+          "validation": "Résoudre 5 challenges de la catégorie Réseau sur Root-Me."
+        },
+        {
+          "id": "tc-02",
+          "code": "TC-02",
+          "title": "Linux en ligne de commande",
+          "summary": "La plupart des serveurs et des outils de sécurité tournent sous Linux. Le terminal devient ton outil principal.",
+          "duration_weeks": 3,
+          "skills": ["Naviguer dans le système de fichiers", "Permissions et utilisateurs", "Processus et services", "Connexion SSH"],
+          "requires": ["tc-01"],
+          "resources": [
+            { "type": "cours", "title": "TryHackMe · Linux Fundamentals Part 1", "url": "https://tryhackme.com/room/linuxfundamentalspart1", "lang": "en", "free": true }
+          ],
+          "labs": [
+            { "platform": "overthewire", "title": "Bandit, niveaux 0 à 10", "url": "https://overthewire.org/wargames/bandit/", "lang": "en", "free": true }
+          ],
+          "validation": "Atteindre le niveau 10 du wargame Bandit."
+        },
+        {
+          "id": "tc-03",
+          "code": "TC-03",
+          "title": "Ton labo virtuel",
+          "summary": "Monter un terrain d'entraînement isolé sur ton ordinateur, pour pratiquer légalement et sans risque.",
+          "duration_weeks": 1,
+          "skills": ["Créer des machines virtuelles", "Isoler un réseau interne", "Installer Kali Linux", "Prendre des instantanés"],
+          "requires": ["tc-02"],
+          "resources": [
+            { "type": "outil", "title": "VirtualBox", "url": "https://www.virtualbox.org/", "lang": "en", "free": true },
+            { "type": "doc", "title": "Kali Linux · installation dans VirtualBox", "url": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/", "lang": "en", "free": true }
+          ],
+          "labs": [],
+          "note": "8 Go de RAM conseillés. Avec moins, privilégie les environnements en ligne des plateformes de labs.",
+          "validation": "Faire tourner une VM Kali et une VM cible sur un réseau interne isolé, et les faire se pinguer."
+        },
+        {
+          "id": "tc-04",
+          "code": "TC-04",
+          "title": "Windows et Active Directory",
+          "summary": "Presque toutes les entreprises ivoiriennes gèrent leurs comptes avec Active Directory. C'est la première cible des attaquants.",
+          "duration_weeks": 3,
+          "skills": ["Utilisateurs, groupes et droits Windows", "Domaines et contrôleurs de domaine", "Stratégies de groupe (GPO)", "Journaux d'événements Windows"],
+          "requires": ["tc-03"],
+          "resources": [
+            { "type": "video", "title": "Microsoft Learn · Active Directory : introduction aux services de domaine", "url": "https://learn.microsoft.com/fr-fr/shows/introtoad/01", "lang": "fr", "free": true }
+          ],
+          "labs": [
+            { "platform": "tryhackme", "title": "Windows Fundamentals 2", "url": "https://tryhackme.com/room/windowsfundamentals2x0x", "lang": "en", "free": true }
+          ],
+          "validation": "Monter un contrôleur de domaine dans ton labo, y joindre un poste client et appliquer une GPO."
+        },
+        {
+          "id": "tc-05",
+          "code": "TC-05",
+          "title": "Scripting Bash",
+          "summary": "Automatiser les tâches répétitives : trier des logs, enchaîner des commandes, lancer des vérifications.",
+          "duration_weeks": 2,
+          "skills": ["Variables, boucles et conditions", "Tubes et redirections", "grep, awk et sed", "Planifier un script avec cron"],
+          "requires": ["tc-02"],
+          "resources": [
+            { "type": "cours", "title": "Greg's Wiki · BashGuide", "url": "https://mywiki.wooledge.org/BashGuide", "lang": "en", "free": true },
+            { "type": "doc", "title": "Manuel de référence GNU Bash", "url": "https://www.gnu.org/software/bash/manual/", "lang": "en", "free": true }
+          ],
+          "labs": [
+            { "platform": "overthewire", "title": "Bandit, niveaux 10 à 20", "url": "https://overthewire.org/wargames/bandit/", "lang": "en", "free": true },
+            { "platform": "root-me", "title": "Challenges App - Script", "url": "https://www.root-me.org/fr/Challenges/App-Script/", "lang": "fr", "free": true }
+          ],
+          "validation": "Écrire un script qui lit un fichier de logs et affiche les 10 adresses IP les plus fréquentes."
+        },
+        {
+          "id": "tc-06",
+          "code": "TC-06",
+          "title": "Python pour la sécurité",
+          "summary": "Le langage le plus utilisé en cybersécurité, pour écrire tes propres outils plutôt que de seulement les utiliser.",
+          "duration_weeks": 3,
+          "skills": ["Bases du langage", "Fichiers et expressions régulières", "Sockets réseau", "Requêtes HTTP"],
+          "requires": ["tc-05"],
+          "resources": [
+            { "type": "cours", "title": "Tutoriel officiel Python", "url": "https://docs.python.org/fr/3/tutorial/", "lang": "fr", "free": true },
+            { "type": "livre", "title": "Automate the Boring Stuff with Python", "url": "https://automatetheboringstuff.com/", "lang": "en", "free": true }
+          ],
+          "labs": [
+            { "platform": "root-me", "title": "Challenges Programmation", "url": "https://www.root-me.org/fr/Challenges/Programmation/", "lang": "fr", "free": true }
+          ],
+          "validation": "Écrire un scanner de ports TCP simple et le tester uniquement sur ton labo."
+        },
+        {
+          "id": "tc-07",
+          "code": "TC-07",
+          "title": "Cryptographie appliquée",
+          "summary": "Comprendre comment on protège une donnée, pour savoir repérer quand c'est mal fait.",
+          "duration_weeks": 2,
+          "skills": ["Chiffrement symétrique", "Chiffrement asymétrique", "Hachage", "Certificats et TLS"],
+          "requires": ["tc-06"],
+          "resources": [
+            { "type": "cours", "title": "SecNumacadémie (ANSSI)", "url": "https://secnumacademie.gouv.fr/", "lang": "fr", "free": true }
+          ],
+          "labs": [
+            { "platform": "cryptohack", "title": "Introduction", "url": "https://cryptohack.org/", "lang": "en", "free": true },
+            { "platform": "tryhackme", "title": "Encryption - Crypto 101", "url": "https://tryhackme.com/room/encryptioncrypto101", "lang": "en", "free": true },
+            { "platform": "root-me", "title": "Challenges Cryptanalyse", "url": "https://www.root-me.org/fr/Challenges/Cryptanalyse/", "lang": "fr", "free": true }
+          ],
+          "validation": "Résoudre 5 challenges de la catégorie Cryptanalyse sur Root-Me."
+        },
+        {
+          "id": "tc-08",
+          "code": "TC-08",
+          "title": "Sécurité web : OWASP Top 10",
+          "summary": "Les sites et applis web sont la porte d'entrée la plus attaquée. Connaître les failles classiques est attendu dans toutes les spécialités.",
+          "duration_weeks": 3,
+          "skills": ["Injection SQL", "Cross-site scripting (XSS)", "Contrôle d'accès défaillant", "Utiliser un proxy d'interception"],
+          "requires": ["tc-07"],
+          "resources": [
+            { "type": "doc", "title": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/", "lang": "en", "free": true },
+            { "type": "cours", "title": "PortSwigger · Web Security Academy", "url": "https://portswigger.net/web-security", "lang": "en", "free": true }
+          ],
+          "labs": [
+            { "platform": "tryhackme", "title": "OWASP Juice Shop", "url": "https://tryhackme.com/room/owaspjuiceshop", "lang": "en", "free": true },
+            { "platform": "root-me", "title": "Challenges Web - Serveur", "url": "https://www.root-me.org/fr/Challenges/Web-Serveur/", "lang": "fr", "free": true }
+          ],
+          "validation": "Résoudre tous les labs de niveau Apprentice sur l'injection SQL de la Web Security Academy."
+        },
+        {
+          "id": "tc-09",
+          "code": "TC-09",
+          "title": "Bilan : choisir ta spécialité",
+          "summary": "Faire le point sur ce que tu as aimé, choisir une spécialité et viser ta première certification.",
+          "duration_weeks": 1,
+          "skills": ["Situer les métiers de la cyber", "Choisir une spécialité", "Préparer une première certification"],
+          "requires": ["tc-04", "tc-08"],
+          "resources": [
+            { "type": "carte", "title": "roadmap.sh · Cyber Security", "url": "https://roadmap.sh/cyber-security", "lang": "en", "free": true },
+            { "type": "certification", "title": "ISC2 · Certified in Cybersecurity (CC)", "url": "https://www.isc2.org/certifications/cc", "lang": "en", "free": false }
+          ],
+          "labs": [],
+          "validation": "Choisir ta spécialité dans l'app et noter ta date cible pour ta première certification.",
+          "unlocks": ["defensive", "offensive", "forensic", "grc"]
+        }
+      ]
+    }
+  ]
+}

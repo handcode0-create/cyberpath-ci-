@@ -1,0 +1,38 @@
+{
+  "version": "2026.11.1",
+  "specialties": [
+    {
+      "id": "defensive",
+      "title": "Défensive (SOC)",
+      "roles": "Analyste SOC niveau 1, analyste réponse à incident",
+      "recruiters": "Banques, opérateurs télécoms, entreprises de services numériques",
+      "certification": "comptia-security-plus"
+    },
+    {
+      "id": "offensive",
+      "title": "Offensive",
+      "roles": "Pentesteur, auditeur technique",
+      "recruiters": "Cabinets d'audit et de conseil, équipes sécurité des grandes entreprises",
+      "certification": "ine-ejpt"
+    },
+    {
+      "id": "forensic",
+      "title": "Forensic",
+      "roles": "Analyste forensic, réponse à incident",
+      "recruiters": "Équipes de réponse à incident, cabinets spécialisés, administrations",
+      "certification": null
+    },
+    {
+      "id": "grc",
+      "title": "GRC",
+      "roles": "Consultant conformité, auditeur ISO 27001",
+      "recruiters": "Banques, assurances, cabinets de conseil, administrations",
+      "certification": null
+    }
+  ],
+  "actors": [
+    { "id": "artci", "name": "ARTCI", "description": "Régulateur des télécoms et du numérique" },
+    { "id": "ci-cert", "name": "CI-CERT", "description": "Réponse nationale aux incidents" },
+    { "id": "plcc", "name": "PLCC", "description": "Lutte contre la cybercriminalité" }
+  ]
+}

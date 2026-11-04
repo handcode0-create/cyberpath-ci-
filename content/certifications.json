@@ -1,0 +1,50 @@
+{
+  "version": "2026.11.1",
+  "currency_rate": { "usd_to_xof": 600, "note": "Taux indicatif pour l'affichage en FCFA" },
+  "certifications": [
+    {
+      "id": "isc2-cc",
+      "title": "ISC2 Certified in Cybersecurity (CC)",
+      "level": "debutant",
+      "tracks": ["tronc-commun"],
+      "after_step": "tc-09",
+      "price_usd": 199,
+      "notes": "Le programme gratuit « One Million Certified in Cybersecurity » a fermé aux nouvelles inscriptions le 20 mai 2026. Les codes déjà obtenus restent valables jusqu'au 31 décembre 2026.",
+      "url": "https://www.isc2.org/certifications/cc",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "comptia-security-plus",
+      "title": "CompTIA Security+ (SY0-701)",
+      "level": "intermediaire",
+      "tracks": ["defensive"],
+      "after_step": "tc-09",
+      "price_usd": 439,
+      "notes": "Prix de la boutique CompTIA US depuis le 1er juin 2026. La version anglaise SY0-701 est retirée le 11 juin 2027.",
+      "url": "https://www.comptia.org/certifications/security",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "ine-ejpt",
+      "title": "INE eJPT (Junior Penetration Tester)",
+      "level": "debutant",
+      "tracks": ["offensive"],
+      "after_step": "tc-09",
+      "price_usd": 249,
+      "notes": "Examen 100 % pratique de 48 h, sans surveillance. Le voucher inclut un repassage gratuit et reste valable 180 jours.",
+      "url": "https://security.ine.com",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "oscp",
+      "title": "OffSec OSCP",
+      "level": "avance",
+      "tracks": ["offensive"],
+      "after_step": null,
+      "price_usd": null,
+      "notes": "À viser après l'eJPT et plusieurs mois de pratique. Prix à vérifier sur le site d'OffSec.",
+      "url": "https://www.offsec.com/",
+      "checked": null
+    }
+  ]
+}

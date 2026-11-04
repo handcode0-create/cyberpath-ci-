@@ -1,0 +1,29 @@
+name: Signaler un lien mort
+description: Une ressource ne répond plus, a changé d'adresse ou est devenue payante
+title: "[Lien mort] "
+labels: ["contenu", "lien-mort"]
+body:
+  - type: input
+    id: etape
+    attributes:
+      label: Étape concernée
+      placeholder: TC-02
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Lien concerné
+    validations:
+      required: true
+  - type: dropdown
+    id: probleme
+    attributes:
+      label: Problème
+      options: ["Page introuvable", "Devenue payante", "Contenu différent", "Autre"]
+    validations:
+      required: true
+  - type: input
+    id: remplacement
+    attributes:
+      label: Lien de remplacement (si tu en connais un)
