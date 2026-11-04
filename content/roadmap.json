@@ -1,12 +1,19 @@
 {
-  "version": "2026.11.1",
+  "version": "2026.11.2",
   "updated": "2026-11-04",
   "language": "fr",
   "tracks": [
     {
       "id": "tronc-commun",
       "title": "Tronc commun",
-      "levels": ["BTS1", "BTS2", "L1", "L2", "L3", "AUTO"],
+      "levels": [
+        "BTS1",
+        "BTS2",
+        "L1",
+        "L2",
+        "L3",
+        "AUTO"
+      ],
       "entry_points": {
         "BTS1": "tc-01",
         "AUTO": "tc-01",
@@ -22,15 +29,44 @@
           "title": "Bases des réseaux",
           "summary": "Comprendre comment deux machines se parlent. Sans ça, impossible de comprendre une attaque ou une défense.",
           "duration_weeks": 3,
-          "skills": ["Modèles OSI et TCP/IP", "Adressage IP et sous-réseaux", "DNS, DHCP et HTTP", "Lire une capture réseau"],
+          "skills": [
+            "Modèles OSI et TCP/IP",
+            "Adressage IP et sous-réseaux",
+            "DNS, DHCP et HTTP",
+            "Lire une capture réseau"
+          ],
           "requires": [],
           "resources": [
-            { "type": "cours", "title": "TryHackMe · What is Networking?", "url": "https://tryhackme.com/room/whatisnetworking", "lang": "en", "free": true },
-            { "type": "video", "title": "Professor Messer · cours vidéo Network+", "url": "https://www.professormesser.com/", "lang": "en", "free": true }
+            {
+              "type": "cours",
+              "title": "TryHackMe · What is Networking?",
+              "url": "https://tryhackme.com/room/whatisnetworking",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "video",
+              "title": "Professor Messer · cours vidéo Network+",
+              "url": "https://www.professormesser.com/",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "tryhackme", "title": "Introductory Networking", "url": "https://tryhackme.com/room/introtonetworking", "lang": "en", "free": true },
-            { "platform": "root-me", "title": "Challenges Réseau", "url": "https://www.root-me.org/fr/Challenges/Reseau/", "lang": "fr", "free": true }
+            {
+              "platform": "tryhackme",
+              "title": "Introductory Networking",
+              "url": "https://tryhackme.com/room/introtonetworking",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "root-me",
+              "title": "Challenges Réseau",
+              "url": "https://www.root-me.org/fr/Challenges/Reseau/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "validation": "Résoudre 5 challenges de la catégorie Réseau sur Root-Me."
         },
@@ -40,13 +76,32 @@
           "title": "Linux en ligne de commande",
           "summary": "La plupart des serveurs et des outils de sécurité tournent sous Linux. Le terminal devient ton outil principal.",
           "duration_weeks": 3,
-          "skills": ["Naviguer dans le système de fichiers", "Permissions et utilisateurs", "Processus et services", "Connexion SSH"],
-          "requires": ["tc-01"],
+          "skills": [
+            "Naviguer dans le système de fichiers",
+            "Permissions et utilisateurs",
+            "Processus et services",
+            "Connexion SSH"
+          ],
+          "requires": [
+            "tc-01"
+          ],
           "resources": [
-            { "type": "cours", "title": "TryHackMe · Linux Fundamentals Part 1", "url": "https://tryhackme.com/room/linuxfundamentalspart1", "lang": "en", "free": true }
+            {
+              "type": "cours",
+              "title": "TryHackMe · Linux Fundamentals Part 1",
+              "url": "https://tryhackme.com/room/linuxfundamentalspart1",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "overthewire", "title": "Bandit, niveaux 0 à 10", "url": "https://overthewire.org/wargames/bandit/", "lang": "en", "free": true }
+            {
+              "platform": "overthewire",
+              "title": "Bandit, niveaux 0 à 10",
+              "url": "https://overthewire.org/wargames/bandit/",
+              "lang": "en",
+              "free": true
+            }
           ],
           "validation": "Atteindre le niveau 10 du wargame Bandit."
         },
@@ -56,11 +111,30 @@
           "title": "Ton labo virtuel",
           "summary": "Monter un terrain d'entraînement isolé sur ton ordinateur, pour pratiquer légalement et sans risque.",
           "duration_weeks": 1,
-          "skills": ["Créer des machines virtuelles", "Isoler un réseau interne", "Installer Kali Linux", "Prendre des instantanés"],
-          "requires": ["tc-02"],
+          "skills": [
+            "Créer des machines virtuelles",
+            "Isoler un réseau interne",
+            "Installer Kali Linux",
+            "Prendre des instantanés"
+          ],
+          "requires": [
+            "tc-02"
+          ],
           "resources": [
-            { "type": "outil", "title": "VirtualBox", "url": "https://www.virtualbox.org/", "lang": "en", "free": true },
-            { "type": "doc", "title": "Kali Linux · installation dans VirtualBox", "url": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/", "lang": "en", "free": true }
+            {
+              "type": "outil",
+              "title": "VirtualBox",
+              "url": "https://www.virtualbox.org/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Kali Linux · installation dans VirtualBox",
+              "url": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [],
           "note": "8 Go de RAM conseillés. Avec moins, privilégie les environnements en ligne des plateformes de labs.",
@@ -72,13 +146,32 @@
           "title": "Windows et Active Directory",
           "summary": "Presque toutes les entreprises ivoiriennes gèrent leurs comptes avec Active Directory. C'est la première cible des attaquants.",
           "duration_weeks": 3,
-          "skills": ["Utilisateurs, groupes et droits Windows", "Domaines et contrôleurs de domaine", "Stratégies de groupe (GPO)", "Journaux d'événements Windows"],
-          "requires": ["tc-03"],
+          "skills": [
+            "Utilisateurs, groupes et droits Windows",
+            "Domaines et contrôleurs de domaine",
+            "Stratégies de groupe (GPO)",
+            "Journaux d'événements Windows"
+          ],
+          "requires": [
+            "tc-03"
+          ],
           "resources": [
-            { "type": "video", "title": "Microsoft Learn · Active Directory : introduction aux services de domaine", "url": "https://learn.microsoft.com/fr-fr/shows/introtoad/01", "lang": "fr", "free": true }
+            {
+              "type": "video",
+              "title": "Microsoft Learn · Active Directory : introduction aux services de domaine",
+              "url": "https://learn.microsoft.com/fr-fr/shows/introtoad/01",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "tryhackme", "title": "Windows Fundamentals 2", "url": "https://tryhackme.com/room/windowsfundamentals2x0x", "lang": "en", "free": true }
+            {
+              "platform": "tryhackme",
+              "title": "Windows Fundamentals 2",
+              "url": "https://tryhackme.com/room/windowsfundamentals2x0x",
+              "lang": "en",
+              "free": true
+            }
           ],
           "validation": "Monter un contrôleur de domaine dans ton labo, y joindre un poste client et appliquer une GPO."
         },
@@ -88,15 +181,46 @@
           "title": "Scripting Bash",
           "summary": "Automatiser les tâches répétitives : trier des logs, enchaîner des commandes, lancer des vérifications.",
           "duration_weeks": 2,
-          "skills": ["Variables, boucles et conditions", "Tubes et redirections", "grep, awk et sed", "Planifier un script avec cron"],
-          "requires": ["tc-02"],
+          "skills": [
+            "Variables, boucles et conditions",
+            "Tubes et redirections",
+            "grep, awk et sed",
+            "Planifier un script avec cron"
+          ],
+          "requires": [
+            "tc-02"
+          ],
           "resources": [
-            { "type": "cours", "title": "Greg's Wiki · BashGuide", "url": "https://mywiki.wooledge.org/BashGuide", "lang": "en", "free": true },
-            { "type": "doc", "title": "Manuel de référence GNU Bash", "url": "https://www.gnu.org/software/bash/manual/", "lang": "en", "free": true }
+            {
+              "type": "cours",
+              "title": "Greg's Wiki · BashGuide",
+              "url": "https://mywiki.wooledge.org/BashGuide",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Manuel de référence GNU Bash",
+              "url": "https://www.gnu.org/software/bash/manual/",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "overthewire", "title": "Bandit, niveaux 10 à 20", "url": "https://overthewire.org/wargames/bandit/", "lang": "en", "free": true },
-            { "platform": "root-me", "title": "Challenges App - Script", "url": "https://www.root-me.org/fr/Challenges/App-Script/", "lang": "fr", "free": true }
+            {
+              "platform": "overthewire",
+              "title": "Bandit, niveaux 10 à 20",
+              "url": "https://overthewire.org/wargames/bandit/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "root-me",
+              "title": "Challenges App - Script",
+              "url": "https://www.root-me.org/fr/Challenges/App-Script/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "validation": "Écrire un script qui lit un fichier de logs et affiche les 10 adresses IP les plus fréquentes."
         },
@@ -106,14 +230,39 @@
           "title": "Python pour la sécurité",
           "summary": "Le langage le plus utilisé en cybersécurité, pour écrire tes propres outils plutôt que de seulement les utiliser.",
           "duration_weeks": 3,
-          "skills": ["Bases du langage", "Fichiers et expressions régulières", "Sockets réseau", "Requêtes HTTP"],
-          "requires": ["tc-05"],
+          "skills": [
+            "Bases du langage",
+            "Fichiers et expressions régulières",
+            "Sockets réseau",
+            "Requêtes HTTP"
+          ],
+          "requires": [
+            "tc-05"
+          ],
           "resources": [
-            { "type": "cours", "title": "Tutoriel officiel Python", "url": "https://docs.python.org/fr/3/tutorial/", "lang": "fr", "free": true },
-            { "type": "livre", "title": "Automate the Boring Stuff with Python", "url": "https://automatetheboringstuff.com/", "lang": "en", "free": true }
+            {
+              "type": "cours",
+              "title": "Tutoriel officiel Python",
+              "url": "https://docs.python.org/fr/3/tutorial/",
+              "lang": "fr",
+              "free": true
+            },
+            {
+              "type": "livre",
+              "title": "Automate the Boring Stuff with Python",
+              "url": "https://automatetheboringstuff.com/",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "root-me", "title": "Challenges Programmation", "url": "https://www.root-me.org/fr/Challenges/Programmation/", "lang": "fr", "free": true }
+            {
+              "platform": "root-me",
+              "title": "Challenges Programmation",
+              "url": "https://www.root-me.org/fr/Challenges/Programmation/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "validation": "Écrire un scanner de ports TCP simple et le tester uniquement sur ton labo."
         },
@@ -123,15 +272,46 @@
           "title": "Cryptographie appliquée",
           "summary": "Comprendre comment on protège une donnée, pour savoir repérer quand c'est mal fait.",
           "duration_weeks": 2,
-          "skills": ["Chiffrement symétrique", "Chiffrement asymétrique", "Hachage", "Certificats et TLS"],
-          "requires": ["tc-06"],
+          "skills": [
+            "Chiffrement symétrique",
+            "Chiffrement asymétrique",
+            "Hachage",
+            "Certificats et TLS"
+          ],
+          "requires": [
+            "tc-06"
+          ],
           "resources": [
-            { "type": "cours", "title": "SecNumacadémie (ANSSI)", "url": "https://secnumacademie.gouv.fr/", "lang": "fr", "free": true }
+            {
+              "type": "cours",
+              "title": "SecNumacadémie (ANSSI)",
+              "url": "https://secnumacademie.gouv.fr/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "cryptohack", "title": "Introduction", "url": "https://cryptohack.org/", "lang": "en", "free": true },
-            { "platform": "tryhackme", "title": "Encryption - Crypto 101", "url": "https://tryhackme.com/room/encryptioncrypto101", "lang": "en", "free": true },
-            { "platform": "root-me", "title": "Challenges Cryptanalyse", "url": "https://www.root-me.org/fr/Challenges/Cryptanalyse/", "lang": "fr", "free": true }
+            {
+              "platform": "cryptohack",
+              "title": "Introduction",
+              "url": "https://cryptohack.org/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "tryhackme",
+              "title": "Encryption - Crypto 101",
+              "url": "https://tryhackme.com/room/encryptioncrypto101",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "root-me",
+              "title": "Challenges Cryptanalyse",
+              "url": "https://www.root-me.org/fr/Challenges/Cryptanalyse/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "validation": "Résoudre 5 challenges de la catégorie Cryptanalyse sur Root-Me."
         },
@@ -141,15 +321,46 @@
           "title": "Sécurité web : OWASP Top 10",
           "summary": "Les sites et applis web sont la porte d'entrée la plus attaquée. Connaître les failles classiques est attendu dans toutes les spécialités.",
           "duration_weeks": 3,
-          "skills": ["Injection SQL", "Cross-site scripting (XSS)", "Contrôle d'accès défaillant", "Utiliser un proxy d'interception"],
-          "requires": ["tc-07"],
+          "skills": [
+            "Injection SQL",
+            "Cross-site scripting (XSS)",
+            "Contrôle d'accès défaillant",
+            "Utiliser un proxy d'interception"
+          ],
+          "requires": [
+            "tc-07"
+          ],
           "resources": [
-            { "type": "doc", "title": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/", "lang": "en", "free": true },
-            { "type": "cours", "title": "PortSwigger · Web Security Academy", "url": "https://portswigger.net/web-security", "lang": "en", "free": true }
+            {
+              "type": "doc",
+              "title": "OWASP Top 10",
+              "url": "https://owasp.org/www-project-top-ten/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "cours",
+              "title": "PortSwigger · Web Security Academy",
+              "url": "https://portswigger.net/web-security",
+              "lang": "en",
+              "free": true
+            }
           ],
           "labs": [
-            { "platform": "tryhackme", "title": "OWASP Juice Shop", "url": "https://tryhackme.com/room/owaspjuiceshop", "lang": "en", "free": true },
-            { "platform": "root-me", "title": "Challenges Web - Serveur", "url": "https://www.root-me.org/fr/Challenges/Web-Serveur/", "lang": "fr", "free": true }
+            {
+              "platform": "tryhackme",
+              "title": "OWASP Juice Shop",
+              "url": "https://tryhackme.com/room/owaspjuiceshop",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "root-me",
+              "title": "Challenges Web - Serveur",
+              "url": "https://www.root-me.org/fr/Challenges/Web-Serveur/",
+              "lang": "fr",
+              "free": true
+            }
           ],
           "validation": "Résoudre tous les labs de niveau Apprentice sur l'injection SQL de la Web Security Academy."
         },
@@ -159,15 +370,793 @@
           "title": "Bilan : choisir ta spécialité",
           "summary": "Faire le point sur ce que tu as aimé, choisir une spécialité et viser ta première certification.",
           "duration_weeks": 1,
-          "skills": ["Situer les métiers de la cyber", "Choisir une spécialité", "Préparer une première certification"],
-          "requires": ["tc-04", "tc-08"],
+          "skills": [
+            "Situer les métiers de la cyber",
+            "Choisir une spécialité",
+            "Préparer une première certification"
+          ],
+          "requires": [
+            "tc-04",
+            "tc-08"
+          ],
           "resources": [
-            { "type": "carte", "title": "roadmap.sh · Cyber Security", "url": "https://roadmap.sh/cyber-security", "lang": "en", "free": true },
-            { "type": "certification", "title": "ISC2 · Certified in Cybersecurity (CC)", "url": "https://www.isc2.org/certifications/cc", "lang": "en", "free": false }
+            {
+              "type": "carte",
+              "title": "roadmap.sh · Cyber Security",
+              "url": "https://roadmap.sh/cyber-security",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "certification",
+              "title": "ISC2 · Certified in Cybersecurity (CC)",
+              "url": "https://www.isc2.org/certifications/cc",
+              "lang": "en",
+              "free": false
+            }
           ],
           "labs": [],
           "validation": "Choisir ta spécialité dans l'app et noter ta date cible pour ta première certification.",
-          "unlocks": ["defensive", "offensive", "forensic", "grc"]
+          "unlocks": [
+            "defensive",
+            "offensive",
+            "forensic",
+            "grc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defensive",
+      "title": "Défensive (SOC)",
+      "levels": [
+        "BTS1",
+        "BTS2",
+        "L1",
+        "L2",
+        "L3",
+        "AUTO"
+      ],
+      "steps": [
+        {
+          "id": "def-01",
+          "code": "DEF-01",
+          "title": "Lire le trafic réseau",
+          "summary": "Un analyste SOC passe ses journées à repérer l'anormal dans le trafic. Tout commence par savoir lire une capture.",
+          "duration_weeks": 2,
+          "skills": [
+            "Filtres Wireshark",
+            "Reconnaître un scan",
+            "Suivre une session TCP",
+            "Extraire un fichier d'une capture"
+          ],
+          "requires": [],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Wireshark User's Guide",
+              "url": "https://www.wireshark.org/download/docs/Wireshark%20User's%20Guide.pdf",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Traffic Analysis Essentials",
+              "url": "https://tryhackme.com/room/trafficanalysisessentials",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "cyberdefenders",
+              "title": "Défis Network Forensics",
+              "url": "https://cyberdefenders.org/blue-team-labs/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Analyser une capture et identifier l'adresse IP qui scanne le réseau, avec les ports visés."
+        },
+        {
+          "id": "def-02",
+          "code": "DEF-02",
+          "title": "Journaux Windows et Sysmon",
+          "summary": "Les journaux sont la mémoire d'un poste. Sysmon les rend assez détaillés pour suivre ce qu'un attaquant y a fait.",
+          "duration_weeks": 2,
+          "skills": [
+            "Journaux d'événements Windows",
+            "Installer et configurer Sysmon",
+            "Création de processus",
+            "Connexions réseau d'un poste"
+          ],
+          "requires": [
+            "def-01"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Microsoft · Sysmon (Sysinternals)",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Microsoft · activer et configurer Sysmon",
+              "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/sysmon/how-to-enable-sysmon",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Installer Sysmon sur le poste client de ton labo et retrouver dans les journaux le lancement d'un programme que tu as exécuté.",
+          "note": "Se fait dans le labo monté aux étapes TC-03 et TC-04."
+        },
+        {
+          "id": "def-03",
+          "code": "DEF-03",
+          "title": "Un SIEM dans ton labo",
+          "summary": "Le SIEM centralise les journaux et lève des alertes. C'est l'outil principal d'un SOC, et Wazuh est gratuit et open source.",
+          "duration_weeks": 3,
+          "skills": [
+            "Installer un SIEM",
+            "Déployer un agent",
+            "Lire et trier une alerte",
+            "Écrire une règle simple"
+          ],
+          "requires": [
+            "def-02"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Wazuh · démarrage rapide",
+              "url": "https://documentation.wazuh.com/current/quickstart.html",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Wazuh · guide de démonstration",
+              "url": "https://documentation.wazuh.com/current/proof-of-concept-guide/index.html",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Installer Wazuh, y connecter le poste client du labo, déclencher une alerte et expliquer ce qu'elle signifie.",
+          "note": "Wazuh demande de la RAM : prévois au moins 8 Go sur la machine hôte."
+        },
+        {
+          "id": "def-04",
+          "code": "DEF-04",
+          "title": "Détection et MITRE ATT&CK",
+          "summary": "MITRE ATT&CK est le langage commun des équipes de défense pour décrire ce que font les attaquants.",
+          "duration_weeks": 2,
+          "skills": [
+            "Lire la matrice ATT&CK",
+            "Associer une alerte à une technique",
+            "Règles de détection réseau",
+            "Réduire les faux positifs"
+          ],
+          "requires": [
+            "def-03"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "MITRE ATT&CK · matrice Enterprise",
+              "url": "https://attack.mitre.org/matrices/enterprise/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Snort",
+              "url": "https://tryhackme.com/room/snort",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Associer 5 alertes de ton SIEM à une technique ATT&CK, en justifiant chaque choix."
+        },
+        {
+          "id": "def-05",
+          "code": "DEF-05",
+          "title": "Réponse à incident",
+          "summary": "Détecter ne suffit pas : il faut contenir, comprendre et rendre compte. C'est ce qu'on attend d'un analyste dès le niveau 1.",
+          "duration_weeks": 2,
+          "skills": [
+            "Étapes de la réponse à incident",
+            "Chronologie d'une attaque",
+            "Rapport d'incident",
+            "Communication en situation de crise"
+          ],
+          "requires": [
+            "def-04"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "ANSSI · Crise d'origine cyber, les clés d'une gestion opérationnelle",
+              "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-gestion_crise_cyber.pdf",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "cyberdefenders",
+              "title": "Défis Blue Team",
+              "url": "https://cyberdefenders.org/blue-team-labs/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Résoudre un défi CyberDefenders et en tirer un rapport d'incident d'une page : chronologie, impact, actions recommandées."
+        }
+      ]
+    },
+    {
+      "id": "offensive",
+      "title": "Offensive",
+      "levels": [
+        "BTS1",
+        "BTS2",
+        "L1",
+        "L2",
+        "L3",
+        "AUTO"
+      ],
+      "steps": [
+        {
+          "id": "off-01",
+          "code": "OFF-01",
+          "title": "Reconnaissance",
+          "summary": "Avant d'attaquer, un pentesteur cartographie. Une bonne reconnaissance fait la moitié du travail.",
+          "duration_weeks": 2,
+          "skills": [
+            "Reconnaissance passive",
+            "Scan de ports",
+            "Détection de services et versions",
+            "Scripts Nmap (NSE)"
+          ],
+          "requires": [],
+          "resources": [
+            {
+              "type": "livre",
+              "title": "Nmap Network Scanning (livre officiel en ligne)",
+              "url": "https://nmap.org/book/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Passive Reconnaissance",
+              "url": "https://tryhackme.com/room/passiverecon",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "tryhackme",
+              "title": "Active Reconnaissance",
+              "url": "https://tryhackme.com/room/activerecon",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "tryhackme",
+              "title": "Nmap",
+              "url": "https://tryhackme.com/room/furthernmap",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Cartographier ton labo avec Nmap : hôtes, ports ouverts, services et versions, dans un tableau."
+        },
+        {
+          "id": "off-02",
+          "code": "OFF-02",
+          "title": "Services réseau et exploitation",
+          "summary": "Exploiter un service mal configuré, c'est le cœur du test d'intrusion. On apprend sur des machines prévues pour ça.",
+          "duration_weeks": 3,
+          "skills": [
+            "Énumérer SMB, FTP, SSH",
+            "Rechercher une vulnérabilité connue",
+            "Utiliser Metasploit",
+            "Obtenir un premier accès"
+          ],
+          "requires": [
+            "off-01"
+          ],
+          "resources": [
+            {
+              "type": "cours",
+              "title": "OffSec · Metasploit Unleashed",
+              "url": "https://www.offsec.com/metasploit-unleashed/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Network Services",
+              "url": "https://tryhackme.com/room/networkservices",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "tryhackme",
+              "title": "Network Services 2",
+              "url": "https://tryhackme.com/room/networkservices2",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "hackthebox",
+              "title": "Starting Point (machines gratuites)",
+              "url": "https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Compromettre toutes les machines gratuites du Tier 0 de Starting Point."
+        },
+        {
+          "id": "off-03",
+          "code": "OFF-03",
+          "title": "Applications web, niveau 2",
+          "summary": "Après l'OWASP Top 10 du tronc commun, on enchaîne les failles web plus subtiles, comme en mission réelle.",
+          "duration_weeks": 3,
+          "skills": [
+            "Contournement d'authentification",
+            "Injection de commandes",
+            "Failles côté client",
+            "Burp Suite au quotidien"
+          ],
+          "requires": [
+            "off-02"
+          ],
+          "resources": [
+            {
+              "type": "cours",
+              "title": "PortSwigger · Web Security Academy",
+              "url": "https://portswigger.net/web-security",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "overthewire",
+              "title": "Natas",
+              "url": "https://overthewire.org/wargames/natas/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "root-me",
+              "title": "Challenges Web - Client",
+              "url": "https://www.root-me.org/fr/Challenges/Web-Client/",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "validation": "Atteindre le niveau 10 du wargame Natas."
+        },
+        {
+          "id": "off-04",
+          "code": "OFF-04",
+          "title": "Élévation de privilèges",
+          "summary": "Un premier accès ne suffit presque jamais. Passer d'un simple utilisateur à administrateur, c'est ce qui fait la différence.",
+          "duration_weeks": 3,
+          "skills": [
+            "Énumération après accès",
+            "Mauvaises permissions et sudo",
+            "Services Windows vulnérables",
+            "Mots de passe stockés"
+          ],
+          "requires": [
+            "off-03"
+          ],
+          "resources": [],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Linux Privilege Escalation",
+              "url": "https://tryhackme.com/room/linprivesc",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "platform": "tryhackme",
+              "title": "Windows PrivEsc",
+              "url": "https://tryhackme.com/room/windows10privesc",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Terminer les deux salles d'élévation de privilèges, Linux et Windows."
+        },
+        {
+          "id": "off-05",
+          "code": "OFF-05",
+          "title": "Rédiger un rapport de pentest",
+          "summary": "Le client ne voit jamais tes commandes : il lit ton rapport. Un bon pentesteur sait expliquer une faille à un directeur comme à un admin.",
+          "duration_weeks": 1,
+          "skills": [
+            "Résumé pour la direction",
+            "Classer les failles par gravité",
+            "Preuves et reproduction",
+            "Recommandations concrètes"
+          ],
+          "requires": [
+            "off-04"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "MITRE ATT&CK · matrice Enterprise",
+              "url": "https://attack.mitre.org/matrices/enterprise/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Rédiger le rapport d'une machine Starting Point : résumé, failles classées par gravité, preuves et recommandations."
+        }
+      ]
+    },
+    {
+      "id": "forensic",
+      "title": "Forensic",
+      "levels": [
+        "BTS1",
+        "BTS2",
+        "L1",
+        "L2",
+        "L3",
+        "AUTO"
+      ],
+      "steps": [
+        {
+          "id": "for-01",
+          "code": "FOR-01",
+          "title": "Analyse de disque",
+          "summary": "Après un incident, le disque raconte l'histoire : fichiers supprimés, programmes lancés, clés USB branchées.",
+          "duration_weeks": 3,
+          "skills": [
+            "Image disque et intégrité (hash)",
+            "Systèmes de fichiers",
+            "Fichiers supprimés",
+            "Chronologie des événements"
+          ],
+          "requires": [],
+          "resources": [
+            {
+              "type": "outil",
+              "title": "Autopsy",
+              "url": "https://www.sleuthkit.org/autopsy/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "cyberdefenders",
+              "title": "Défis Endpoint Forensics",
+              "url": "https://cyberdefenders.org/blue-team-labs/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Analyser une image disque de défi avec Autopsy et reconstituer la chronologie des actions de l'utilisateur."
+        },
+        {
+          "id": "for-02",
+          "code": "FOR-02",
+          "title": "Artefacts Windows",
+          "summary": "Windows garde des traces partout : registre, prefetch, raccourcis. Savoir où chercher fait gagner des heures.",
+          "duration_weeks": 2,
+          "skills": [
+            "Base de registre",
+            "Prefetch et Amcache",
+            "Historique d'exécution",
+            "Périphériques USB"
+          ],
+          "requires": [
+            "for-01"
+          ],
+          "resources": [],
+          "labs": [
+            {
+              "platform": "tryhackme",
+              "title": "Windows Forensics 1",
+              "url": "https://tryhackme.com/room/windowsforensics1",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Terminer la salle Windows Forensics 1 et lister 5 artefacts utiles avec leur emplacement."
+        },
+        {
+          "id": "for-03",
+          "code": "FOR-03",
+          "title": "Analyse de mémoire",
+          "summary": "Certains logiciels malveillants ne touchent jamais le disque. La mémoire vive est alors la seule preuve.",
+          "duration_weeks": 3,
+          "skills": [
+            "Capturer la mémoire",
+            "Lister processus et connexions",
+            "Repérer un processus suspect",
+            "Volatility 3"
+          ],
+          "requires": [
+            "for-02"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Volatility 3 · documentation",
+              "url": "https://volatility3.readthedocs.io/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "cyberdefenders",
+              "title": "Défis Endpoint Forensics (mémoire)",
+              "url": "https://cyberdefenders.org/blue-team-labs/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Analyser une image mémoire avec Volatility 3 et identifier le processus malveillant et sa connexion réseau."
+        },
+        {
+          "id": "for-04",
+          "code": "FOR-04",
+          "title": "Forensic réseau",
+          "summary": "Le trafic capturé pendant une attaque montre d'où elle vient et ce qui est sorti.",
+          "duration_weeks": 2,
+          "skills": [
+            "Reconstituer une session",
+            "Extraire des fichiers transférés",
+            "Repérer une exfiltration",
+            "Indicateurs de compromission"
+          ],
+          "requires": [
+            "for-03"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Wireshark User's Guide",
+              "url": "https://www.wireshark.org/download/docs/Wireshark%20User's%20Guide.pdf",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "cyberdefenders",
+              "title": "Défis Network Forensics",
+              "url": "https://cyberdefenders.org/blue-team-labs/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Résoudre un défi Network Forensics et lister les indicateurs de compromission trouvés."
+        },
+        {
+          "id": "for-05",
+          "code": "FOR-05",
+          "title": "Rapport et chaîne de preuve",
+          "summary": "Une preuve mal documentée ne vaut rien devant un juge. La rigueur fait partie du métier.",
+          "duration_weeks": 1,
+          "skills": [
+            "Chaîne de possession",
+            "Rapport d'expertise",
+            "Neutralité des conclusions",
+            "Communication en crise"
+          ],
+          "requires": [
+            "for-04"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "ANSSI · Crise d'origine cyber, les clés d'une gestion opérationnelle",
+              "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-gestion_crise_cyber.pdf",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Rédiger le rapport d'une de tes analyses avec chaîne de possession, méthode, constats et limites."
+        }
+      ]
+    },
+    {
+      "id": "grc",
+      "title": "GRC",
+      "levels": [
+        "BTS1",
+        "BTS2",
+        "L1",
+        "L2",
+        "L3",
+        "AUTO"
+      ],
+      "steps": [
+        {
+          "id": "grc-01",
+          "code": "GRC-01",
+          "title": "Hygiène informatique",
+          "summary": "Avant les normes, les bases : la plupart des incidents viennent de mesures simples jamais appliquées.",
+          "duration_weeks": 2,
+          "skills": [
+            "Mesures d'hygiène essentielles",
+            "Gestion des comptes et mots de passe",
+            "Mises à jour et sauvegardes",
+            "Sensibiliser des non-techniciens"
+          ],
+          "requires": [],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "ANSSI · Guide d'hygiène informatique",
+              "url": "https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf",
+              "lang": "fr",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "ANSSI · La cybersécurité pour les TPE/PME en 13 questions",
+              "url": "https://messervices.cyber.gouv.fr/documents-guides/20241212_np_anssi_guide_tpe-pme_v2.pdf",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Évaluer une petite structure réelle ou fictive avec le guide d'hygiène et proposer 5 mesures prioritaires."
+        },
+        {
+          "id": "grc-02",
+          "code": "GRC-02",
+          "title": "Cadre légal ivoirien",
+          "summary": "Un consultant GRC en Côte d'Ivoire doit connaître la loi sur la cybercriminalité et celle sur les données personnelles.",
+          "duration_weeks": 1,
+          "skills": [
+            "Loi sur la cybercriminalité",
+            "Protection des données personnelles",
+            "Rôle de l'ARTCI",
+            "Obligations d'une entreprise"
+          ],
+          "requires": [
+            "grc-01"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "Loi n° 2013-451 sur la lutte contre la cybercriminalité",
+              "url": "https://civlii.laws.africa/en/akn/ci/act/2013/451/fra@2025-01-30/source",
+              "lang": "fr",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "ARTCI · protection des données",
+              "url": "https://artci.ci/en/data-protection/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Conseil de l'Europe · politiques cybercriminalité de la Côte d'Ivoire",
+              "url": "https://www.coe.int/fr/web/octopus/-/cote-ivoire",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Résumer en une page les obligations d'une entreprise ivoirienne qui collecte les données de ses clients."
+        },
+        {
+          "id": "grc-03",
+          "code": "GRC-03",
+          "title": "Analyse de risques EBIOS RM",
+          "summary": "Avant de protéger, il faut savoir quoi protéger et contre qui. EBIOS RM est la méthode de référence en francophonie.",
+          "duration_weeks": 3,
+          "skills": [
+            "Valeurs métier et biens supports",
+            "Sources de risque",
+            "Scénarios stratégiques",
+            "Mesures de traitement"
+          ],
+          "requires": [
+            "grc-02"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "ANSSI · La méthode EBIOS Risk Manager, le guide",
+              "url": "https://messervices.cyber.gouv.fr/guides/la-methode-ebios-risk-manager-le-guide",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Mener les ateliers 1 et 2 d'EBIOS RM sur un cas fictif : une clinique, un cybercafé ou une microfinance."
+        },
+        {
+          "id": "grc-04",
+          "code": "GRC-04",
+          "title": "Normes et référentiels",
+          "summary": "ISO 27001 et le NIST CSF sont les référentiels que demandent banques et grandes entreprises.",
+          "duration_weeks": 2,
+          "skills": [
+            "Structure d'ISO 27001",
+            "Système de management de la sécurité",
+            "Les 6 fonctions du NIST CSF 2.0",
+            "Préparer un audit"
+          ],
+          "requires": [
+            "grc-03"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "NIST Cybersecurity Framework 2.0",
+              "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "ISO · présentation d'ISO/IEC 27001",
+              "url": "https://www.iso.org/standard/27001",
+              "lang": "en",
+              "free": false
+            }
+          ],
+          "labs": [],
+          "validation": "Faire correspondre 10 mesures du guide d'hygiène aux fonctions du NIST CSF 2.0.",
+          "note": "La présentation d'ISO 27001 est gratuite, mais le texte complet de la norme est payant."
+        },
+        {
+          "id": "grc-05",
+          "code": "GRC-05",
+          "title": "Politique et charte de sécurité",
+          "summary": "Les règles écrites engagent l'entreprise et ses salariés. Savoir les rédiger clairement est très recherché.",
+          "duration_weeks": 1,
+          "skills": [
+            "Politique de sécurité",
+            "Charte informatique",
+            "Rédiger pour être lu",
+            "Faire valider et diffuser"
+          ],
+          "requires": [
+            "grc-04"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "ANSSI · Guide de la charte d'utilisation des moyens informatiques",
+              "url": "https://messervices.cyber.gouv.fr/documents-guides/guide-charte-utilisation-moyens-informatiques-outils-numeriques_anssi.pdf",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Rédiger la charte informatique d'une PME fictive de 20 salariés."
         }
       ]
     }

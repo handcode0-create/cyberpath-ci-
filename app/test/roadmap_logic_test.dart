@@ -80,6 +80,31 @@ void main() {
     });
   });
 
+  group('spécialités', () {
+    test('chaque spécialité de careers.json a sa piste', () {
+      for (final specialty in content.careers.specialties) {
+        final track = content.roadmap.track(specialty.id);
+        expect(track, isNotNull, reason: specialty.id);
+        expect(track!.steps, isNotEmpty, reason: specialty.id);
+      }
+    });
+
+    test('une piste de spécialité démarre à sa première étape', () {
+      final defensive = content.roadmap.track('defensive')!;
+      final view = buildTrackView(defensive, {}, null);
+      expect(view.current!.step.id, 'def-01');
+      expect(view.viewOf('def-02').status, StepStatus.locked);
+    });
+
+    test('les certifications citées par les métiers existent', () {
+      for (final specialty in content.careers.specialties) {
+        if (specialty.certification != null) {
+          expect(content.certifications.byId(specialty.certification), isNotNull);
+        }
+      }
+    });
+  });
+
   group('utilitaires', () {
     test('comparaison de versions de contenu', () {
       expect(compareContentVersions('2026.11.2', '2026.11.1'), greaterThan(0));
