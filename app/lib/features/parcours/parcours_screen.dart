@@ -11,6 +11,9 @@ import '../../data/models.dart';
 import '../../domain/roadmap_logic.dart';
 import '../../state/providers.dart';
 import '../home_shell.dart';
+import '../offensive/methode_screen.dart';
+import '../offensive/outils_screen.dart';
+import '../offensive/services_screen.dart';
 import 'step_detail_screen.dart';
 
 class ParcoursScreen extends ConsumerStatefulWidget {
@@ -97,6 +100,11 @@ class _ParcoursScreenState extends ConsumerState<ParcoursScreen> {
               ),
             ),
           ),
+          if (view != null && _trackId == 'offensive')
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(CpSpace.page, CpSpace.xl, CpSpace.page, 0),
+              sliver: SliverToBoxAdapter(child: _OffensiveTools(content: widget.content)),
+            ),
           SliverPadding(
             padding: const EdgeInsets.fromLTRB(CpSpace.page, CpSpace.xl, CpSpace.page, CpSpace.navClearance),
             sliver: view == null
@@ -391,3 +399,83 @@ class _SpecialtyPlaceholder extends StatelessWidget {
 }
 
 String _weeks(int n) => n == 1 ? '1 semaine' : '$n semaines';
+
+class _OffensiveTools extends StatelessWidget {
+  const _OffensiveTools({required this.content});
+
+  final AppContent content;
+
+  @override
+  Widget build(BuildContext context) {
+    return GlassCard(
+      padding: const EdgeInsets.all(CpSpace.md),
+      child: Row(
+        children: [
+          Expanded(
+            child: _Tile(
+              icon: Icons.route_outlined,
+              label: 'Méthode',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => MethodeScreen(content: content)),
+              ),
+            ),
+          ),
+          const SizedBox(width: CpSpace.sm),
+          Expanded(
+            child: _Tile(
+              icon: Icons.dns_outlined,
+              label: 'Services',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => ServicesScreen(content: content)),
+              ),
+            ),
+          ),
+          const SizedBox(width: CpSpace.sm),
+          Expanded(
+            child: _Tile(
+              icon: Icons.build_outlined,
+              label: 'Outils',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => OutilsScreen(content: content)),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Tile extends StatelessWidget {
+  const _Tile({required this.icon, required this.label, required this.onTap});
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: label,
+      excludeSemantics: true,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(CpRadius.tile),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: CpSpace.sm),
+            child: Column(
+              children: [
+                Icon(icon, size: 20, color: CpTrackColors.offensive),
+                const SizedBox(height: 6),
+                Text(label, style: cpText(12.5, weight: FontWeight.w500)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

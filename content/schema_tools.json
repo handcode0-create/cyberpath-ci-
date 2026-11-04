@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CyberPath CI · boîte à outils",
+  "type": "object",
+  "required": ["version", "intro", "warning", "categories", "tools"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string", "pattern": "^\\d{4}\\.\\d{1,2}\\.\\d+$" },
+    "intro": { "type": "string" },
+    "warning": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" }
+        }
+      }
+    },
+    "tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "purpose", "use_when", "avoid_when", "sources"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "category": { "type": "string" },
+          "purpose": { "type": "string" },
+          "use_when": { "type": "string" },
+          "avoid_when": { "type": "string" },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["label", "url"],
+              "additionalProperties": false,
+              "properties": {
+                "label": { "type": "string" },
+                "url": { "type": "string", "pattern": "^https://" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

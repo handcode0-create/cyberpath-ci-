@@ -12,7 +12,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "content"
 TARGET = ROOT / "app" / "assets" / "content"
-FILES = ["roadmap.json", "certifications.json", "careers.json"]
+FILES = [
+    "roadmap.json",
+    "certifications.json",
+    "careers.json",
+    "methodology.json",
+    "tools.json",
+    "services.json",
+]
 
 
 def main():

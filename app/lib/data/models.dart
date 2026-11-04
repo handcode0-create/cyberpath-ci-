@@ -293,6 +293,241 @@ class Careers {
       );
 }
 
+class PentestPhase {
+  const PentestPhase({
+    required this.id,
+    required this.name,
+    required this.goal,
+    required this.question,
+    required this.steps,
+  });
+
+  final String id;
+  final String name;
+  final String goal;
+  final String question;
+  final List<String> steps;
+
+  factory PentestPhase.fromJson(Map<String, dynamic> json) => PentestPhase(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        goal: json['goal'] as String,
+        question: json['question'] as String,
+        steps: _strings(json['steps']),
+      );
+}
+
+class AutomationNote {
+  const AutomationNote({required this.title, required this.text, required this.steps});
+
+  final String title;
+  final String text;
+  final List<String> steps;
+
+  factory AutomationNote.fromJson(Map<String, dynamic> json) => AutomationNote(
+        title: json['title'] as String,
+        text: json['text'] as String,
+        steps: _strings(json['steps']),
+      );
+}
+
+class Methodology {
+  const Methodology({
+    required this.version,
+    required this.title,
+    required this.intro,
+    required this.phases,
+    this.automation,
+  });
+
+  final String version;
+  final String title;
+  final String intro;
+  final List<PentestPhase> phases;
+  final AutomationNote? automation;
+
+  factory Methodology.fromJson(Map<String, dynamic> json) {
+    final pentest = json['pentest'] as Map<String, dynamic>;
+    return Methodology(
+      version: json['version'] as String,
+      title: pentest['title'] as String,
+      intro: pentest['intro'] as String,
+      phases: (pentest['phases'] as List)
+          .map((e) => PentestPhase.fromJson(e as Map<String, dynamic>))
+          .toList(growable: false),
+      automation: pentest['automation'] == null
+          ? null
+          : AutomationNote.fromJson(pentest['automation'] as Map<String, dynamic>),
+    );
+  }
+}
+
+class ToolSource {
+  const ToolSource({required this.label, required this.url});
+
+  final String label;
+  final String url;
+
+  factory ToolSource.fromJson(Map<String, dynamic> json) =>
+      ToolSource(label: json['label'] as String, url: json['url'] as String);
+}
+
+class SecTool {
+  const SecTool({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.purpose,
+    required this.useWhen,
+    required this.avoidWhen,
+    required this.sources,
+  });
+
+  final String id;
+  final String name;
+  final String category;
+  final String purpose;
+  final String useWhen;
+  final String avoidWhen;
+  final List<ToolSource> sources;
+
+  factory SecTool.fromJson(Map<String, dynamic> json) => SecTool(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        category: json['category'] as String,
+        purpose: json['purpose'] as String,
+        useWhen: json['use_when'] as String,
+        avoidWhen: json['avoid_when'] as String,
+        sources: (json['sources'] as List)
+            .map((e) => ToolSource.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+      );
+}
+
+class ToolCategory {
+  const ToolCategory({required this.id, required this.name});
+
+  final String id;
+  final String name;
+
+  factory ToolCategory.fromJson(Map<String, dynamic> json) =>
+      ToolCategory(id: json['id'] as String, name: json['name'] as String);
+}
+
+class ToolCatalog {
+  const ToolCatalog({
+    required this.version,
+    required this.intro,
+    required this.warning,
+    required this.categories,
+    required this.tools,
+  });
+
+  final String version;
+  final String intro;
+  final String warning;
+  final List<ToolCategory> categories;
+  final List<SecTool> tools;
+
+  SecTool? byId(String id) {
+    for (final t in tools) {
+      if (t.id == id) return t;
+    }
+    return null;
+  }
+
+  List<SecTool> byCategory(String categoryId) => tools.where((t) => t.category == categoryId).toList(growable: false);
+
+  factory ToolCatalog.fromJson(Map<String, dynamic> json) => ToolCatalog(
+        version: json['version'] as String,
+        intro: json['intro'] as String,
+        warning: json['warning'] as String,
+        categories: (json['categories'] as List)
+            .map((e) => ToolCategory.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+        tools: (json['tools'] as List)
+            .map((e) => SecTool.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+      );
+}
+
+class ServiceToolRef {
+  const ServiceToolRef({required this.toolId, required this.why});
+
+  final String toolId;
+  final String why;
+
+  factory ServiceToolRef.fromJson(Map<String, dynamic> json) =>
+      ServiceToolRef(toolId: json['tool_id'] as String, why: json['why'] as String);
+}
+
+class LegalLab {
+  const LegalLab({required this.platform, required this.title, required this.url});
+
+  final String platform;
+  final String title;
+  final String url;
+
+  factory LegalLab.fromJson(Map<String, dynamic> json) => LegalLab(
+        platform: json['platform'] as String,
+        title: json['title'] as String,
+        url: json['url'] as String,
+      );
+}
+
+class DiscoveredService {
+  const DiscoveredService({
+    required this.id,
+    required this.name,
+    required this.ports,
+    required this.whatItIs,
+    required this.checkFirst,
+    required this.enumTools,
+    required this.cveLookup,
+    required this.legalLabs,
+  });
+
+  final String id;
+  final String name;
+  final String ports;
+  final String whatItIs;
+  final List<String> checkFirst;
+  final List<ServiceToolRef> enumTools;
+  final String cveLookup;
+  final List<LegalLab> legalLabs;
+
+  factory DiscoveredService.fromJson(Map<String, dynamic> json) => DiscoveredService(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        ports: json['ports'] as String,
+        whatItIs: json['what_it_is'] as String,
+        checkFirst: _strings(json['check_first']),
+        enumTools: (json['enum_tools'] as List)
+            .map((e) => ServiceToolRef.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+        cveLookup: json['cve_lookup'] as String,
+        legalLabs: (json['legal_labs'] as List)
+            .map((e) => LegalLab.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+      );
+}
+
+class ServiceCatalog {
+  const ServiceCatalog({required this.version, required this.intro, required this.services});
+
+  final String version;
+  final String intro;
+  final List<DiscoveredService> services;
+
+  factory ServiceCatalog.fromJson(Map<String, dynamic> json) => ServiceCatalog(
+        version: json['version'] as String,
+        intro: json['intro'] as String,
+        services: (json['services'] as List)
+            .map((e) => DiscoveredService.fromJson(e as Map<String, dynamic>))
+            .toList(growable: false),
+      );
+}
+
 enum ContentSource { bundled, downloaded }
 
 class AppContent {
@@ -300,12 +535,18 @@ class AppContent {
     required this.roadmap,
     required this.certifications,
     required this.careers,
+    required this.methodology,
+    required this.tools,
+    required this.services,
     required this.source,
   });
 
   final Roadmap roadmap;
   final CertificationCatalog certifications;
   final Careers careers;
+  final Methodology methodology;
+  final ToolCatalog tools;
+  final ServiceCatalog services;
   final ContentSource source;
 }
 

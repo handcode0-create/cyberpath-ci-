@@ -65,6 +65,36 @@ void main() {
     expect(find.text('Marquer comme validée'), findsOneWidget);
   });
 
+  testWidgets('la piste Offensive ouvre Méthode, Services et Outils', (tester) async {
+    await pumpApp(tester, {
+      'profile.onboarded': true,
+      'profile.ethicsAccepted': true,
+      'profile.level': 'L3',
+      'profile.goal': 'offensive',
+      'progress.validated': '{"tc-09":"2026-11-01T00:00:00.000"}',
+    });
+
+    await tester.tap(find.text('Offensive'));
+    await tester.pumpAndSettle();
+    expect(find.text('Outils'), findsOneWidget);
+
+    await tester.tap(find.text('Outils'));
+    await tester.pumpAndSettle();
+    expect(find.text('Boîte à outils'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Services'));
+    await tester.pumpAndSettle();
+    expect(find.text("J'ai trouvé ce service"), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Méthode'));
+    await tester.pumpAndSettle();
+    expect(find.text('La démarche d\'un test d\'intrusion'), findsOneWidget);
+  });
+
   testWidgets('les quatre onglets sont accessibles', (tester) async {
     await pumpApp(tester, {
       'profile.onboarded': true,

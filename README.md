@@ -13,7 +13,10 @@ cyberpath-ci/
 │   ├── roadmap.json        # pistes et étapes
 │   ├── certifications.json # certifications, prix vérifiés
 │   ├── careers.json        # métiers et acteurs en Côte d'Ivoire
-│   └── schema.json         # schéma de validation de roadmap.json
+│   ├── methodology.json    # piste Offensive : les 7 phases d'un pentest
+│   ├── tools.json          # piste Offensive : catalogue d'outils (quand/pourquoi)
+│   ├── services.json       # piste Offensive : fiches « j'ai trouvé ce service »
+│   └── schema*.json        # schémas de validation de chaque fichier
 ├── tools/                  # scripts de validation et de synchronisation
 └── .github/                # CI et modèles d'issues
 ```
@@ -55,7 +58,8 @@ app/lib/
 ├── data/        modèles, chargement du contenu, progression locale
 ├── domain/      logique du parcours (statuts des étapes, déblocages)
 ├── state/       providers Riverpod
-└── features/    onboarding, parcours, fiche d'étape, métiers, certifs, plus
+└── features/    onboarding, parcours, fiche d'étape, métiers, certifs, plus,
+                 offensive/ (méthode, services, boîte à outils)
 ```
 
 Le réglage « Réduire les effets » (écran Plus) coupe le flou et les lueurs ; il s'active aussi tout seul quand le téléphone demande de réduire les animations.

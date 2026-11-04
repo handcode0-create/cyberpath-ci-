@@ -41,7 +41,17 @@ La CI refait ces vérifications et contrôle aussi que les liens répondent.
 
 ### Version du contenu
 
-Si tu modifies `roadmap.json`, augmente le champ `version` (format `AAAA.MM.N`, par exemple `2026.11.2`). C'est ce qui déclenche la mise à jour dans l'app des utilisateurs.
+Si tu modifies un fichier de `content/`, augmente son champ `version` (format `AAAA.MM.N`, par exemple `2026.11.3`). C'est ce qui déclenche la mise à jour dans l'app des utilisateurs.
+
+### `methodology.json`, `tools.json`, `services.json` (piste Offensive)
+
+Ces trois fichiers complètent la piste Offensive, au niveau éducatif, jamais opérationnel :
+
+- `methodology.json` : les 7 phases d'un test d'intrusion (reconnaissance → rapport) et les étapes qui les couvrent.
+- `tools.json` : un catalogue d'outils (quand les utiliser, quand ne pas les utiliser), avec une source officielle pour chacun — catalogue Kali ou dépôt d'origine, jamais une copie.
+- `services.json` : une fiche par service qu'on rencontre après un scan (FTP, SSH, HTTP, SMB, RDP, MySQL…) : ce qu'il faut vérifier, quel outil d'énumération utiliser (et pourquoi), comment chercher les CVE de la version trouvée, vers quel lab légal s'entraîner.
+
+Une fiche ne contient jamais de commande ou de recette d'attaque prête à lancer contre une cible : c'est la règle de fond du projet (voir « Éthique » dans le README). `tools/validate_content.py` vérifie que chaque `tool_id` cité dans `services.json` existe dans `tools.json`, et que chaque étape citée dans `methodology.json` existe dans `roadmap.json`.
 
 ## Contribuer au code
 

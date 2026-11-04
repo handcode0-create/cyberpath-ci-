@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.2",
+  "version": "2026.11.3",
   "updated": "2026-11-04",
   "language": "fr",
   "tracks": [
@@ -615,8 +615,8 @@
         {
           "id": "off-01",
           "code": "OFF-01",
-          "title": "Reconnaissance",
-          "summary": "Avant d'attaquer, un pentesteur cartographie. Une bonne reconnaissance fait la moitié du travail.",
+          "title": "Reconnaissance et scan",
+          "summary": "Avant tout, on cartographie : quelles machines, quelles portes ouvertes, quels services et quelles versions. Tout le reste en dépend.",
           "duration_weeks": 2,
           "skills": [
             "Reconnaissance passive",
@@ -662,27 +662,19 @@
         {
           "id": "off-02",
           "code": "OFF-02",
-          "title": "Services réseau et exploitation",
-          "summary": "Exploiter un service mal configuré, c'est le cœur du test d'intrusion. On apprend sur des machines prévues pour ça.",
+          "title": "Énumérer les services",
+          "summary": "Chaque service ouvert se lit différemment. Apprends à interroger FTP, SSH, SMB, web… et à relever ce qui est mal configuré. Voir les fiches « J'ai trouvé ce service ».",
           "duration_weeks": 3,
           "skills": [
-            "Énumérer SMB, FTP, SSH",
-            "Rechercher une vulnérabilité connue",
-            "Utiliser Metasploit",
-            "Obtenir un premier accès"
+            "Lire un résultat de scan",
+            "Comprendre FTP, SSH, SMB, HTTP",
+            "Repérer une mauvaise configuration",
+            "Relever la version exacte"
           ],
           "requires": [
             "off-01"
           ],
-          "resources": [
-            {
-              "type": "cours",
-              "title": "OffSec · Metasploit Unleashed",
-              "url": "https://www.offsec.com/metasploit-unleashed/",
-              "lang": "en",
-              "free": true
-            }
-          ],
+          "resources": [],
           "labs": [
             {
               "platform": "tryhackme",
@@ -697,7 +689,92 @@
               "url": "https://tryhackme.com/room/networkservices2",
               "lang": "en",
               "free": true
+            }
+          ],
+          "validation": "Pour 3 services de ton labo, rédiger une fiche : rôle du service, version relevée, configuration à risque éventuelle."
+        },
+        {
+          "id": "off-03",
+          "code": "OFF-03",
+          "title": "Recherche de vulnérabilités",
+          "summary": "Une version trouvée, que sait-on dessus ? Relier un logiciel à ses failles connues (CVE), mesurer la gravité et trier ce qui compte vraiment.",
+          "duration_weeks": 2,
+          "skills": [
+            "Passer d'une version à une CVE",
+            "Lire un score CVSS",
+            "Savoir si une faille est activement exploitée (CISA KEV)",
+            "Juger une source de code de démonstration",
+            "Ne jamais exécuter un code non lu"
+          ],
+          "requires": [
+            "off-02"
+          ],
+          "resources": [
+            {
+              "type": "doc",
+              "title": "NVD · base nationale des vulnérabilités (NIST)",
+              "url": "https://nvd.nist.gov/",
+              "lang": "en",
+              "free": true
             },
+            {
+              "type": "doc",
+              "title": "CVE.org · programme CVE",
+              "url": "https://www.cve.org/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "FIRST · guide du score CVSS",
+              "url": "https://www.first.org/cvss/",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "CISA · catalogue des vulnérabilités exploitées (KEV)",
+              "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+              "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "Exploit-DB · archive de codes de démonstration",
+              "url": "https://www.exploit-db.com/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [],
+          "validation": "Pour 3 versions relevées dans ton labo, produire un tableau : CVE trouvées, score CVSS, présence ou non dans le catalogue KEV, source consultée.",
+          "note": "Attention : parmi les dépôts GitHub qui prétendent fournir un code de démonstration pour une CVE, une étude de l'université de Leiden (2022) a trouvé environ 10 % de dépôts malveillants. Ne lance jamais un code que tu n'as pas lu et compris, même s'il vient d'une source qui paraît sérieuse."
+        },
+        {
+          "id": "off-04",
+          "code": "OFF-04",
+          "title": "Exploitation en labo",
+          "summary": "Vérifier qu'une faille est réelle en obtenant un accès, uniquement sur des machines prévues pour ça. On apprend ce que fait un module avant de l'utiliser.",
+          "duration_weeks": 3,
+          "skills": [
+            "Comprendre ce que fait un module",
+            "Utiliser Metasploit en labo",
+            "Obtenir un premier accès",
+            "Documenter la preuve"
+          ],
+          "requires": [
+            "off-03"
+          ],
+          "resources": [
+            {
+              "type": "cours",
+              "title": "OffSec · Metasploit Unleashed",
+              "url": "https://www.offsec.com/metasploit-unleashed/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "labs": [
             {
               "platform": "hackthebox",
               "title": "Starting Point (machines gratuites)",
@@ -709,8 +786,8 @@
           "validation": "Compromettre toutes les machines gratuites du Tier 0 de Starting Point."
         },
         {
-          "id": "off-03",
-          "code": "OFF-03",
+          "id": "off-05",
+          "code": "OFF-05",
           "title": "Applications web, niveau 2",
           "summary": "Après l'OWASP Top 10 du tronc commun, on enchaîne les failles web plus subtiles, comme en mission réelle.",
           "duration_weeks": 3,
@@ -721,7 +798,7 @@
             "Burp Suite au quotidien"
           ],
           "requires": [
-            "off-02"
+            "off-04"
           ],
           "resources": [
             {
@@ -751,8 +828,8 @@
           "validation": "Atteindre le niveau 10 du wargame Natas."
         },
         {
-          "id": "off-04",
-          "code": "OFF-04",
+          "id": "off-06",
+          "code": "OFF-06",
           "title": "Élévation de privilèges",
           "summary": "Un premier accès ne suffit presque jamais. Passer d'un simple utilisateur à administrateur, c'est ce qui fait la différence.",
           "duration_weeks": 3,
@@ -763,7 +840,7 @@
             "Mots de passe stockés"
           ],
           "requires": [
-            "off-03"
+            "off-05"
           ],
           "resources": [],
           "labs": [
@@ -785,8 +862,44 @@
           "validation": "Terminer les deux salles d'élévation de privilèges, Linux et Windows."
         },
         {
-          "id": "off-05",
-          "code": "OFF-05",
+          "id": "off-07",
+          "code": "OFF-07",
+          "title": "Automatiser : écrire ses outils",
+          "summary": "Crée ton propre outil quand tu répètes une tâche, quand aucun outil ne fait exactement ce qu'il te faut, ou pour comprendre un mécanisme de l'intérieur.",
+          "duration_weeks": 2,
+          "skills": [
+            "Automatiser une tâche répétitive",
+            "Lire et analyser la sortie d'un outil",
+            "Écrire un petit script Python",
+            "Savoir quand ne pas réinventer"
+          ],
+          "requires": [
+            "off-06"
+          ],
+          "resources": [
+            {
+              "type": "cours",
+              "title": "Documentation Python (fr) · tutoriel",
+              "url": "https://docs.python.org/fr/3/tutorial/",
+              "lang": "fr",
+              "free": true
+            }
+          ],
+          "labs": [
+            {
+              "platform": "overthewire",
+              "title": "Bandit (scripts shell)",
+              "url": "https://overthewire.org/wargames/bandit/",
+              "lang": "en",
+              "free": true
+            }
+          ],
+          "validation": "Écrire un script qui lit le résultat d'un scan de ton labo et en sort un tableau lisible (hôte, port, service). Idée d'exercice : un énumérateur de pages web pour ton propre site de test.",
+          "note": "Règle simple : si tu fais trois fois la même chose, automatise-la. Si un outil existe et fait le travail, utilise-le. Écrire le tien sert surtout à comprendre."
+        },
+        {
+          "id": "off-08",
+          "code": "OFF-08",
           "title": "Rédiger un rapport de pentest",
           "summary": "Le client ne voit jamais tes commandes : il lit ton rapport. Un bon pentesteur sait expliquer une faille à un directeur comme à un admin.",
           "duration_weeks": 1,
@@ -797,7 +910,7 @@
             "Recommandations concrètes"
           ],
           "requires": [
-            "off-04"
+            "off-07"
           ],
           "resources": [
             {

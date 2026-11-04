@@ -5,11 +5,17 @@ import 'package:cyberpath_ci/data/models.dart';
 import 'package:cyberpath_ci/domain/roadmap_logic.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+const _contentFiles = [
+  'roadmap.json',
+  'certifications.json',
+  'careers.json',
+  'methodology.json',
+  'tools.json',
+  'services.json',
+];
+
 AppContent loadContent() => ContentRepository.parse(
-      {
-        for (final f in ['roadmap.json', 'certifications.json', 'careers.json'])
-          f: File('assets/content/$f').readAsStringSync(),
-      },
+      {for (final f in _contentFiles) f: File('assets/content/$f').readAsStringSync()},
       ContentSource.bundled,
     );
 
@@ -96,12 +102,49 @@ void main() {
       expect(view.viewOf('def-02').status, StepStatus.locked);
     });
 
+    test('la piste Offensive suit la méthode : recon, énum, vuln, exploit, postexploit, auto, rapport', () {
+      final offensive = content.roadmap.track('offensive')!;
+      expect(offensive.steps.map((s) => s.id), [
+        'off-01', 'off-02', 'off-03', 'off-04', 'off-05', 'off-06', 'off-07', 'off-08',
+      ]);
+      final ids = offensive.steps.map((s) => s.id).toSet();
+      for (final phase in content.methodology.phases) {
+        for (final sid in phase.steps) {
+          expect(ids.contains(sid), isTrue, reason: '${phase.id} -> $sid');
+        }
+      }
+    });
+
     test('les certifications citées par les métiers existent', () {
       for (final specialty in content.careers.specialties) {
         if (specialty.certification != null) {
           expect(content.certifications.byId(specialty.certification), isNotNull);
         }
       }
+    });
+  });
+
+  group('boîte à outils et services', () {
+    test('chaque outil référencé par une fiche service existe dans le catalogue', () {
+      final toolIds = content.tools.tools.map((t) => t.id).toSet();
+      for (final service in content.services.services) {
+        for (final ref in service.enumTools) {
+          expect(toolIds.contains(ref.toolId), isTrue, reason: '${service.id} -> ${ref.toolId}');
+        }
+      }
+    });
+
+    test('chaque outil appartient à une catégorie déclarée', () {
+      final catIds = content.tools.categories.map((c) => c.id).toSet();
+      for (final tool in content.tools.tools) {
+        expect(catIds.contains(tool.category), isTrue, reason: tool.id);
+      }
+    });
+
+    test('byCategory et byId retrouvent les bons outils', () {
+      final nmap = content.tools.byId('nmap');
+      expect(nmap, isNotNull);
+      expect(content.tools.byCategory('scan'), contains(nmap));
     });
   });
 

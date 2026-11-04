@@ -10,7 +10,14 @@ import 'models.dart';
 /// --dart-define=CONTENT_BASE_URL=... Vide : pas de mise à jour en ligne.
 const contentBaseUrl = String.fromEnvironment('CONTENT_BASE_URL');
 
-const _files = ['roadmap.json', 'certifications.json', 'careers.json'];
+const _files = [
+  'roadmap.json',
+  'certifications.json',
+  'careers.json',
+  'methodology.json',
+  'tools.json',
+  'services.json',
+];
 const _cachePrefix = 'content.cache.';
 
 enum UpdateStatus { updated, upToDate, notConfigured, failed }
@@ -101,6 +108,9 @@ class ContentRepository {
       roadmap: Roadmap.fromJson(decode('roadmap.json')),
       certifications: CertificationCatalog.fromJson(decode('certifications.json')),
       careers: Careers.fromJson(decode('careers.json')),
+      methodology: Methodology.fromJson(decode('methodology.json')),
+      tools: ToolCatalog.fromJson(decode('tools.json')),
+      services: ServiceCatalog.fromJson(decode('services.json')),
       source: source,
     );
   }

@@ -21,6 +21,12 @@ class _FileBundle extends CachingAssetBundle {
 
 String _asset(String name) => File('assets/content/$name').readAsStringSync();
 
+Map<String, String> _unchangedExtras() => {
+      'methodology.json': _asset('methodology.json'),
+      'tools.json': _asset('tools.json'),
+      'services.json': _asset('services.json'),
+    };
+
 String _bumped(String version) {
   final json = jsonDecode(_asset('roadmap.json')) as Map<String, dynamic>;
   json['version'] = version;
@@ -58,6 +64,7 @@ void main() {
       'roadmap.json': _bumped('2026.12.1'),
       'certifications.json': _asset('certifications.json'),
       'careers.json': _asset('careers.json'),
+      ..._unchangedExtras(),
     });
     final repo = ContentRepository(prefs, bundle: _FileBundle(), client: client, baseUrl: 'https://exemple.test/content');
 
@@ -75,6 +82,7 @@ void main() {
       'roadmap.json': _asset('roadmap.json'),
       'certifications.json': _asset('certifications.json'),
       'careers.json': _asset('careers.json'),
+      ..._unchangedExtras(),
     });
     final repo = ContentRepository(await SharedPreferences.getInstance(),
         bundle: _FileBundle(), client: client, baseUrl: 'https://exemple.test/content');
@@ -88,6 +96,7 @@ void main() {
       'roadmap.json': '{pas du json',
       'certifications.json': _asset('certifications.json'),
       'careers.json': _asset('careers.json'),
+      ..._unchangedExtras(),
     });
     final repo = ContentRepository(prefs, bundle: _FileBundle(), client: client, baseUrl: 'https://exemple.test/content');
     final result = await repo.checkForUpdate('2026.11.1');

@@ -1,0 +1,159 @@
+{
+  "version": "2026.11.3",
+  "intro": "Un outil ne remplace pas la réflexion : il répond à une question précise. Avant d'en lancer un, sache ce que tu cherches. Installe-les depuis le catalogue officiel de Kali ou le dépôt d'origine du projet, jamais depuis une copie trouvée ailleurs.",
+  "warning": "Ces outils ne s'utilisent que sur un environnement autorisé : ton labo ou une plateforme d'entraînement. Les utiliser sur un système tiers sans accord écrit est illégal.",
+  "categories": [
+    { "id": "scan", "name": "Scan et cartographie" },
+    { "id": "enum", "name": "Énumération des services" },
+    { "id": "web", "name": "Applications web" },
+    { "id": "vuln", "name": "Recherche de vulnérabilités" },
+    { "id": "creds", "name": "Mots de passe et empreintes" },
+    { "id": "postexploit", "name": "Post-exploitation" }
+  ],
+  "tools": [
+    {
+      "id": "nmap",
+      "name": "Nmap",
+      "category": "scan",
+      "purpose": "Découvrir les hôtes, les ports ouverts, les services et leurs versions.",
+      "use_when": "Au tout début, pour cartographier ce qui est accessible.",
+      "avoid_when": "Pour fouiller un service précis : un scan ne remplace pas l'énumération dédiée.",
+      "sources": [
+        { "label": "Page Kali", "url": "https://www.kali.org/tools/nmap/" },
+        { "label": "Livre officiel", "url": "https://nmap.org/book/" }
+      ]
+    },
+    {
+      "id": "autorecon",
+      "name": "AutoRecon",
+      "category": "scan",
+      "purpose": "Lancer automatiquement une première série de scans et d'énumérations pour ne rien oublier.",
+      "use_when": "Pour dégrossir une cible et avoir une vue d'ensemble à lire ensuite.",
+      "avoid_when": "Au lieu de comprendre : il produit beaucoup de sorties qu'il faut savoir interpréter soi-même.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/autorecon/" }]
+    },
+    {
+      "id": "enum4linux-ng",
+      "name": "enum4linux-ng",
+      "category": "enum",
+      "purpose": "Interroger un service de partage de fichiers Windows (SMB) pour en tirer comptes, partages et informations.",
+      "use_when": "Quand un service SMB répond sur la cible.",
+      "avoid_when": "Sur autre chose que SMB : il ne sert qu'à ça.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/enum4linux-ng/" }]
+    },
+    {
+      "id": "netexec",
+      "name": "NetExec",
+      "category": "enum",
+      "purpose": "Tester des accès et énumérer des services réseau Windows à grande échelle.",
+      "use_when": "Dans un environnement Windows ou Active Directory, pour vérifier des accès déjà obtenus.",
+      "avoid_when": "Comme outil d'intrusion aveugle : il s'utilise avec des informations déjà collectées.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/netexec/" }]
+    },
+    {
+      "id": "ffuf",
+      "name": "ffuf",
+      "category": "web",
+      "purpose": "Découvrir des pages et dossiers cachés d'un site en testant une liste de noms.",
+      "use_when": "Quand un service web répond et que tu cherches des chemins non affichés.",
+      "avoid_when": "Sur un petit site dont tu as déjà vu toutes les pages.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/ffuf/" }]
+    },
+    {
+      "id": "gobuster",
+      "name": "Gobuster",
+      "category": "web",
+      "purpose": "Même idée que ffuf : énumérer dossiers, fichiers ou sous-domaines d'un site.",
+      "use_when": "Pour explorer la structure d'un site web.",
+      "avoid_when": "Si tu as déjà une cartographie complète du site.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/gobuster/" }]
+    },
+    {
+      "id": "nikto",
+      "name": "Nikto",
+      "category": "web",
+      "purpose": "Repérer rapidement des configurations web à problème et des fichiers connus.",
+      "use_when": "Comme premier survol d'un serveur web.",
+      "avoid_when": "Comme preuve définitive : il signale des pistes, pas des certitudes.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/nikto/" }]
+    },
+    {
+      "id": "sqlmap",
+      "name": "sqlmap",
+      "category": "web",
+      "purpose": "Étudier et confirmer une injection SQL sur une application de test.",
+      "use_when": "Quand tu soupçonnes une injection SQL et que tu as l'autorisation d'y toucher.",
+      "avoid_when": "Avant d'avoir compris à la main ce qu'est une injection SQL (étape TC-08).",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/sqlmap/" }]
+    },
+    {
+      "id": "exploitdb",
+      "name": "Exploit-DB / searchsploit",
+      "category": "vuln",
+      "purpose": "Chercher si un code de démonstration existe pour une vulnérabilité connue.",
+      "use_when": "Après avoir identifié une version vulnérable, pour comprendre la faille.",
+      "avoid_when": "Pour lancer un code sans l'avoir lu et compris : voir l'avertissement de l'étape OFF-03.",
+      "sources": [
+        { "label": "Page Kali", "url": "https://www.kali.org/tools/exploitdb/" },
+        { "label": "Exploit-DB", "url": "https://www.exploit-db.com/" }
+      ]
+    },
+    {
+      "id": "metasploit",
+      "name": "Metasploit Framework",
+      "category": "vuln",
+      "purpose": "Cadre d'étude des vulnérabilités, avec modules documentés, pour pratiquer sur un labo.",
+      "use_when": "Pour comprendre une faille de façon encadrée sur un environnement autorisé.",
+      "avoid_when": "Comme boîte noire : lis toujours ce que fait le module avant de l'utiliser.",
+      "sources": [
+        { "label": "Page Kali", "url": "https://www.kali.org/tools/metasploit-framework/" },
+        { "label": "Metasploit Unleashed", "url": "https://www.offsec.com/metasploit-unleashed/" }
+      ]
+    },
+    {
+      "id": "hydra",
+      "name": "Hydra",
+      "category": "creds",
+      "purpose": "Tester la robustesse d'une authentification face à une liste de mots de passe.",
+      "use_when": "Pour démontrer qu'un service accepte des identifiants faibles, sur un labo.",
+      "avoid_when": "Sur un service réel : c'est bruyant, traçable et illégal sans autorisation.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/hydra/" }]
+    },
+    {
+      "id": "john",
+      "name": "John the Ripper",
+      "category": "creds",
+      "purpose": "Étudier la solidité d'empreintes de mots de passe récupérées sur un labo.",
+      "use_when": "Pour comprendre pourquoi un mot de passe faible tombe vite.",
+      "avoid_when": "Sur des empreintes qui ne t'appartiennent pas.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/john/" }]
+    },
+    {
+      "id": "burpsuite",
+      "name": "Burp Suite (Community)",
+      "category": "web",
+      "purpose": "Intercepter et étudier les échanges entre ton navigateur et une application web.",
+      "use_when": "Dès que tu travailles sur une appli web : c'est l'outil central.",
+      "avoid_when": "Jamais vraiment, mais la version gratuite suffit largement pour apprendre.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/burpsuite/" }]
+    },
+    {
+      "id": "peass",
+      "name": "PEASS-ng (LinPEAS / WinPEAS)",
+      "category": "postexploit",
+      "purpose": "Une fois un accès obtenu, lister les pistes d'élévation de privilèges.",
+      "use_when": "Juste après avoir obtenu un premier accès sur ton labo.",
+      "avoid_when": "Avant d'avoir un accès : il s'exécute depuis l'intérieur.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/peass-ng/" }]
+    },
+    {
+      "id": "wireshark",
+      "name": "Wireshark",
+      "category": "scan",
+      "purpose": "Observer le trafic réseau en détail pour comprendre ce qui circule.",
+      "use_when": "Pour analyser un protocole ou vérifier ce qu'un outil envoie vraiment.",
+      "avoid_when": "Pour une vue rapide : lire une capture prend du temps.",
+      "sources": [{ "label": "Page Kali", "url": "https://www.kali.org/tools/wireshark/" }]
+    }
+  ]
+}

@@ -28,6 +28,14 @@ def collect_urls():
     certs = json.loads((CONTENT / "certifications.json").read_text(encoding="utf-8"))
     for cert in certs["certifications"]:
         urls.setdefault(cert["url"], cert["id"])
+    tools = json.loads((CONTENT / "tools.json").read_text(encoding="utf-8"))
+    for tool in tools["tools"]:
+        for src in tool["sources"]:
+            urls.setdefault(src["url"], tool["id"])
+    services = json.loads((CONTENT / "services.json").read_text(encoding="utf-8"))
+    for service in services["services"]:
+        for lab in service["legal_labs"]:
+            urls.setdefault(lab["url"], service["id"])
     return urls
 
 

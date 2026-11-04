@@ -1,0 +1,118 @@
+{
+  "version": "2026.11.3",
+  "intro": "Un scan t'a montré un service ouvert. Avant de foncer, comprends ce qu'il fait, ce qui le rend risqué, et comment vérifier s'il a une faille connue. Chaque fiche se lit en 2 minutes.",
+  "services": [
+    {
+      "id": "ftp",
+      "name": "FTP",
+      "ports": "21",
+      "what_it_is": "Transfert de fichiers. Souvent oublié sur un serveur, parfois ouvert aux connexions anonymes.",
+      "check_first": [
+        "La connexion anonyme est-elle acceptée ?",
+        "Quels fichiers sont accessibles en lecture ou en écriture ?",
+        "Quelle est la version exacte du serveur (bannière) ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "nmap", "why": "Le script NSE ftp-anon teste directement l'accès anonyme." }
+      ],
+      "cve_lookup": "Relève la bannière du serveur (ex. vsftpd 3.0.3) puis cherche ce nom et cette version sur la NVD et CVE.org.",
+      "legal_labs": [
+        { "platform": "tryhackme", "title": "Network Services", "url": "https://tryhackme.com/room/networkservices" }
+      ]
+    },
+    {
+      "id": "ssh",
+      "name": "SSH",
+      "ports": "22",
+      "what_it_is": "Accès distant sécurisé en ligne de commande. Très répandu sur les serveurs Linux.",
+      "check_first": [
+        "Quelle version du serveur (ex. OpenSSH) ?",
+        "L'authentification par mot de passe est-elle autorisée, ou seulement par clé ?",
+        "Un utilisateur a-t-il un mot de passe faible ou réutilisé (à tester uniquement sur ton labo) ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "nmap", "why": "Détecte la version exacte et les algorithmes supportés." }
+      ],
+      "cve_lookup": "La version du serveur SSH (ex. OpenSSH 8.9) se recherche sur la NVD. Vérifie aussi le catalogue CISA KEV si une faille y figure.",
+      "legal_labs": [
+        { "platform": "tryhackme", "title": "Network Services 2", "url": "https://tryhackme.com/room/networkservices2" }
+      ]
+    },
+    {
+      "id": "http",
+      "name": "HTTP / HTTPS",
+      "ports": "80, 443, 8080…",
+      "what_it_is": "Le service web. Le plus riche à explorer : pages, technologies, API, formulaires.",
+      "check_first": [
+        "Quelle technologie sert le site (serveur, framework, CMS) ?",
+        "Y a-t-il des pages ou dossiers non liés depuis la page d'accueil ?",
+        "Le site a-t-il des formulaires, une zone de connexion, une API ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "nikto", "why": "Premier survol : en-têtes, fichiers connus, erreurs de configuration." },
+        { "tool_id": "gobuster", "why": "Cherche des chemins non visibles depuis la navigation normale." },
+        { "tool_id": "burpsuite", "why": "Observe en détail chaque échange entre le navigateur et le site." }
+      ],
+      "cve_lookup": "Identifie la techno précise (ex. Apache 2.4.49, un plugin CMS et sa version) et cherche ce nom exact sur la NVD.",
+      "legal_labs": [
+        { "platform": "portswigger", "title": "Web Security Academy", "url": "https://portswigger.net/web-security" },
+        { "platform": "overthewire", "title": "Natas", "url": "https://overthewire.org/wargames/natas/" }
+      ]
+    },
+    {
+      "id": "smb",
+      "name": "SMB",
+      "ports": "445 (139)",
+      "what_it_is": "Partage de fichiers et d'imprimantes, surtout dans les environnements Windows.",
+      "check_first": [
+        "Des partages sont-ils accessibles sans authentification ?",
+        "Quels comptes et groupes peut-on lister ?",
+        "Quelle version du protocole ou du système est en face ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "enum4linux-ng", "why": "Spécialisé SMB : partages, comptes, politique de mots de passe." },
+        { "tool_id": "netexec", "why": "Utile une fois des identifiants déjà obtenus, pour vérifier des accès." }
+      ],
+      "cve_lookup": "Note la version du système ou du service SMB et cherche-la sur la NVD ; les failles SMB majeures sont souvent aussi listées dans le catalogue CISA KEV.",
+      "legal_labs": [
+        { "platform": "tryhackme", "title": "Network Services", "url": "https://tryhackme.com/room/networkservices" }
+      ]
+    },
+    {
+      "id": "rdp",
+      "name": "RDP",
+      "ports": "3389",
+      "what_it_is": "Bureau à distance Windows. Très ciblé car souvent exposé par erreur sur Internet.",
+      "check_first": [
+        "Le service accepte-t-il l'authentification réseau (NLA) ?",
+        "Quelle version de Windows est en face ?",
+        "Le service est-il censé être accessible depuis l'extérieur ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "nmap", "why": "Identifie la version et la configuration de sécurité du service RDP." }
+      ],
+      "cve_lookup": "Relève la version de Windows ou du service RDP et cherche-la sur la NVD ; plusieurs failles RDP majeures figurent au catalogue CISA KEV.",
+      "legal_labs": [
+        { "platform": "tryhackme", "title": "Windows PrivEsc", "url": "https://tryhackme.com/room/windows10privesc" }
+      ]
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL / MariaDB",
+      "ports": "3306",
+      "what_it_is": "Base de données relationnelle. Un accès direct au port signale souvent une configuration à revoir.",
+      "check_first": [
+        "Le service accepte-t-il une connexion sans mot de passe ou avec un compte par défaut (à tester uniquement sur ton labo) ?",
+        "Quelle version du moteur de base de données ?",
+        "Le port devrait-il être exposé en dehors du serveur applicatif ?"
+      ],
+      "enum_tools": [
+        { "tool_id": "nmap", "why": "Script NSE pour identifier la version et tester les comptes par défaut sur ton labo." }
+      ],
+      "cve_lookup": "Note la version exacte du moteur (ex. MySQL 8.0.x) et cherche-la sur la NVD.",
+      "legal_labs": [
+        { "platform": "tryhackme", "title": "Network Services 2", "url": "https://tryhackme.com/room/networkservices2" }
+      ]
+    }
+  ]
+}

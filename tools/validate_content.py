@@ -84,6 +84,39 @@ def check_careers(careers, cert_ids, errors):
             errors.append(f"careers.json : certification inconnue {cert}")
 
 
+def check_methodology(methodology, step_ids, errors):
+    for phase in methodology["pentest"]["phases"]:
+        for sid in phase["steps"]:
+            if sid not in step_ids:
+                errors.append(f"methodology.json : phase {phase['id']} référence une étape inconnue {sid}")
+    for sid in methodology["pentest"].get("automation", {}).get("steps", []):
+        if sid not in step_ids:
+            errors.append(f"methodology.json : automation référence une étape inconnue {sid}")
+
+
+def check_tools(tools, errors):
+    cat_ids = {c["id"] for c in tools["categories"]}
+    ids = set()
+    for tool in tools["tools"]:
+        if tool["id"] in ids:
+            errors.append(f"tools.json : outil en double {tool['id']}")
+        ids.add(tool["id"])
+        if tool["category"] not in cat_ids:
+            errors.append(f"tools.json : {tool['id']} référence une catégorie inconnue {tool['category']}")
+    return ids
+
+
+def check_services(services, tool_ids, errors):
+    ids = set()
+    for service in services["services"]:
+        if service["id"] in ids:
+            errors.append(f"services.json : service en double {service['id']}")
+        ids.add(service["id"])
+        for ref in service["enum_tools"]:
+            if ref["tool_id"] not in tool_ids:
+                errors.append(f"services.json : {service['id']} référence un outil inconnu {ref['tool_id']}")
+
+
 def main():
     errors = []
     roadmap = load("roadmap.json")
@@ -100,6 +133,25 @@ def main():
     cert_ids = check_certifications(load("certifications.json"), step_ids, errors)
     check_careers(load("careers.json"), cert_ids, errors)
 
+    methodology = load("methodology.json")
+    tools = load("tools.json")
+    services = load("services.json")
+    for name, data, schema_name in [
+        ("methodology.json", methodology, "schema_methodology.json"),
+        ("tools.json", tools, "schema_tools.json"),
+        ("services.json", services, "schema_services.json"),
+    ]:
+        try:
+            jsonschema.validate(data, load(schema_name))
+        except jsonschema.ValidationError as e:
+            path = "/".join(str(p) for p in e.absolute_path)
+            print(f"Schéma invalide dans {name} à {path or 'la racine'} : {e.message}")
+            return 1
+
+    check_methodology(methodology, step_ids, errors)
+    tool_ids = check_tools(tools, errors)
+    check_services(services, tool_ids, errors)
+
     if errors:
         print("Contenu invalide :")
         for e in errors:
@@ -107,7 +159,10 @@ def main():
         return 1
 
     steps = sum(len(t["steps"]) for t in roadmap["tracks"])
-    print(f"Contenu valide : version {roadmap['version']}, {len(roadmap['tracks'])} piste(s), {steps} étapes.")
+    print(
+        f"Contenu valide : version {roadmap['version']}, {len(roadmap['tracks'])} piste(s), {steps} étapes, "
+        f"{len(tool_ids)} outils, {len(services['services'])} services."
+    )
     return 0
 
 

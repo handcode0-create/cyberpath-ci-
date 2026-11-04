@@ -1,0 +1,80 @@
+{
+  "version": "2026.11.3",
+  "pentest": {
+    "title": "La démarche d'un test d'intrusion",
+    "intro": "Un pentest n'est pas une suite d'outils lancés au hasard. C'est une démarche ordonnée : chaque phase prépare la suivante, et chaque résultat oriente ce que tu fais ensuite. Cette méthode se pratique uniquement sur un environnement autorisé : ton labo, ou une plateforme prévue pour ça.",
+    "phases": [
+      {
+        "id": "recon",
+        "name": "Reconnaissance",
+        "goal": "Découvrir la cible sans encore la toucher en profondeur : noms de domaine, adresses, technologies visibles.",
+        "question": "Qu'est-ce qui existe, et qu'est-ce qui est exposé ?",
+        "steps": [
+          "off-01"
+        ]
+      },
+      {
+        "id": "scan",
+        "name": "Scan et cartographie",
+        "goal": "Identifier les ports ouverts, les services qui écoutent et leurs versions.",
+        "question": "Quelles portes sont ouvertes, et qu'y a-t-il derrière ?",
+        "steps": [
+          "off-01"
+        ]
+      },
+      {
+        "id": "enum",
+        "name": "Énumération",
+        "goal": "Interroger chaque service pour en tirer un maximum d'informations : comptes, partages, configuration, version précise.",
+        "question": "Ce service me dit-il quelque chose d'utile ou de mal configuré ?",
+        "steps": [
+          "off-02"
+        ]
+      },
+      {
+        "id": "vuln",
+        "name": "Recherche de vulnérabilités",
+        "goal": "Confronter ce qu'on a trouvé (surtout les versions) aux vulnérabilités connues, et juger lesquelles comptent vraiment.",
+        "question": "Cette version a-t-elle une faille connue, et est-elle sérieuse ?",
+        "steps": [
+          "off-03"
+        ]
+      },
+      {
+        "id": "exploit",
+        "name": "Exploitation",
+        "goal": "Vérifier une faille en obtenant un accès, sur un environnement autorisé uniquement.",
+        "question": "La faille est-elle réellement exploitable ici ?",
+        "steps": [
+          "off-04",
+          "off-05"
+        ]
+      },
+      {
+        "id": "postexploit",
+        "name": "Post-exploitation",
+        "goal": "Une fois entré, mesurer l'impact réel : jusqu'où peut-on aller ? Élévation de privilèges, déplacement.",
+        "question": "Que peut faire un attaquant une fois ce pied à l'intérieur ?",
+        "steps": [
+          "off-06"
+        ]
+      },
+      {
+        "id": "report",
+        "name": "Rapport",
+        "goal": "Expliquer les failles, leur gravité et comment les corriger. C'est le seul livrable que le client lit vraiment.",
+        "question": "Qu'est-ce que le client doit comprendre et corriger ?",
+        "steps": [
+          "off-08"
+        ]
+      }
+    ],
+    "automation": {
+      "title": "Transversal : automatiser",
+      "text": "À n'importe quelle phase, écrire un petit outil aide à gagner du temps et à comprendre.",
+      "steps": [
+        "off-07"
+      ]
+    }
+  }
+}
