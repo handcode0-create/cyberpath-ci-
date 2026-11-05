@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:cyberpath_ci/data/content_repository.dart';
 import 'package:cyberpath_ci/data/models.dart';

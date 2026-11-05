@@ -26,7 +26,14 @@ jobs:
           channel: stable
           cache: true
       - name: Générer le dossier android si absent
-        run: test -d android || flutter create . --platforms=android --org ci.cyberpath
+        run: |
+          if [ ! -d android ]; then
+            flutter create . --platforms=android --org ci.cyberpath
+            # flutter create ajoute son propre test/widget_test.dart (modèle
+            # par défaut, classe MyApp) : il n'a rien à voir avec nos tests
+            # et casse flutter analyze. On le retire après génération.
+            rm -f test/widget_test.dart
+          fi
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
