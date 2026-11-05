@@ -117,15 +117,18 @@ class _PlusScreenState extends ConsumerState<PlusScreen> {
               children: [
                 const _ValueRow(label: 'Thème', value: 'Sombre'),
                 const Divider(height: 1, color: CpColors.divider),
-                MergeSemantics(
-                  child: SwitchListTile(
-                    value: reduceEffects,
-                    onChanged: (v) => ref.read(reduceEffectsProvider.notifier).set(v),
-                    contentPadding: const EdgeInsets.symmetric(horizontal: CpSpace.lg, vertical: 2),
-                    title: Text('Réduire les effets', style: CpType.body()),
-                    subtitle: Text(
-                      'Moins de flou et de lueurs : plus fluide sur les petits téléphones',
-                      style: CpType.small(),
+                Material(
+                  type: MaterialType.transparency,
+                  child: MergeSemantics(
+                    child: SwitchListTile(
+                      value: reduceEffects,
+                      onChanged: (v) => ref.read(reduceEffectsProvider.notifier).set(v),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: CpSpace.lg, vertical: 2),
+                      title: Text('Réduire les effets', style: CpType.body()),
+                      subtitle: Text(
+                        'Moins de flou et de lueurs : plus fluide sur les petits téléphones',
+                        style: CpType.small(),
+                      ),
                     ),
                   ),
                 ),

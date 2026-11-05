@@ -62,8 +62,15 @@ class _ParcoursScreenState extends ConsumerState<ParcoursScreen> {
               children: [
                 Row(
                   children: [
-                    Text('CYBERPATH CI', style: CpType.label()),
-                    const Spacer(),
+                    Expanded(
+                      child: Text(
+                        'CYBERPATH CI',
+                        style: CpType.label(),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    const SizedBox(width: CpSpace.sm),
                     const InfoPill(icon: Icons.offline_pin_outlined, label: 'Disponible hors ligne'),
                   ],
                 ),

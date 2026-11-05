@@ -94,7 +94,8 @@ class _NavButton extends StatelessWidget {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 180),
             curve: Curves.easeOut,
-            height: 56,
+            constraints: const BoxConstraints(minHeight: 56),
+            padding: const EdgeInsets.symmetric(vertical: 6),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: selected ? CpColors.primary.withValues(alpha: 0.14) : Colors.transparent,
@@ -103,6 +104,7 @@ class _NavButton extends StatelessWidget {
               ),
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(selected ? item.selectedIcon : item.icon, size: 22, color: color),

@@ -77,8 +77,11 @@ void main() {
   });
 
   test('ignore une version identique', () async {
+    // On fixe la version du serveur à celle qu'on compare, plutôt que de
+    // dépendre de la version réelle du contenu embarqué (qui change à
+    // chaque mise à jour de content/roadmap.json).
     final client = _server({
-      'roadmap.json': _asset('roadmap.json'),
+      'roadmap.json': _bumped('2026.11.1'),
       'certifications.json': _asset('certifications.json'),
       'careers.json': _asset('careers.json'),
       ..._unchangedExtras(),
