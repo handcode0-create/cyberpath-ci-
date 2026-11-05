@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.3",
+  "version": "2026.11.4",
   "updated": "2026-11-04",
   "language": "fr",
   "tracks": [
@@ -50,6 +50,13 @@
               "url": "https://www.professormesser.com/",
               "lang": "en",
               "free": true
+            },
+            {
+              "type": "cours",
+              "title": "OpenClassrooms · Concevez votre réseau TCP/IP",
+              "url": "https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip",
+              "lang": "fr",
+              "free": true
             }
           ],
           "labs": [
@@ -91,6 +98,13 @@
               "title": "TryHackMe · Linux Fundamentals Part 1",
               "url": "https://tryhackme.com/room/linuxfundamentalspart1",
               "lang": "en",
+              "free": true
+            },
+            {
+              "type": "cours",
+              "title": "OpenClassrooms · Apprivoisez le terminal Linux pour naviguer dans votre système",
+              "url": "https://openclassrooms.com/fr/courses/8957361-apprivoisez-le-terminal-linux-pour-naviguer-dans-votre-systeme",
+              "lang": "fr",
               "free": true
             }
           ],
@@ -204,6 +218,13 @@
               "url": "https://www.gnu.org/software/bash/manual/",
               "lang": "en",
               "free": true
+            },
+            {
+              "type": "cours",
+              "title": "OpenClassrooms · Automatisez vos actions récurrentes avec des scripts Bash",
+              "url": "https://openclassrooms.com/fr/courses/8961541-automatisez-vos-actions-recurrentes-avec-des-scripts-bash",
+              "lang": "fr",
+              "free": true
             }
           ],
           "labs": [
@@ -252,6 +273,13 @@
               "title": "Automate the Boring Stuff with Python",
               "url": "https://automatetheboringstuff.com/",
               "lang": "en",
+              "free": true
+            },
+            {
+              "type": "cours",
+              "title": "OpenClassrooms · Apprenez les bases du langage Python",
+              "url": "https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python",
+              "lang": "fr",
               "free": true
             }
           ],
@@ -343,6 +371,13 @@
               "title": "PortSwigger · Web Security Academy",
               "url": "https://portswigger.net/web-security",
               "lang": "en",
+              "free": true
+            },
+            {
+              "type": "doc",
+              "title": "OWASP Top 10 2021 · traduction française officielle",
+              "url": "https://top10.owasp.org/2021/fr/index.html",
+              "lang": "fr",
               "free": true
             }
           ],
@@ -1238,6 +1273,13 @@
               "url": "https://www.iso.org/standard/27001",
               "lang": "en",
               "free": false
+            },
+            {
+              "type": "doc",
+              "title": "NIST · Cadre de Cybersécurité (CSF) 2.0, traduction officielle (PDF)",
+              "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.fre.pdf",
+              "lang": "fr",
+              "free": true
             }
           ],
           "labs": [],
