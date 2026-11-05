@@ -41,6 +41,18 @@ void main() {
     test('le bilan débloque les 4 spécialités', () {
       expect(core.step('tc-09')!.unlocks, containsAll(['defensive', 'offensive', 'forensic', 'grc']));
     });
+
+    test('chaque ressource et chaque lab a un niveau pédagogique valide', () {
+      const valid = {'debutant', 'intermediaire', 'avance'};
+      for (final track in content.roadmap.tracks) {
+        for (final step in track.steps) {
+          for (final link in [...step.resources, ...step.labs]) {
+            expect(valid.contains(link.level), isTrue, reason: '${step.id} · ${link.title}');
+            expect(link.levelLabel, isNotNull, reason: '${step.id} · ${link.title}');
+          }
+        }
+      }
+    });
   });
 
   group('statuts des étapes', () {

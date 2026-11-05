@@ -25,10 +25,12 @@ Une ressource est acceptée si :
 Chaque étape suit le format décrit dans `content/schema.json`. Exemple de ressource :
 
 ```json
-{ "type": "cours", "title": "Nom de la ressource", "url": "https://...", "lang": "fr", "free": true }
+{ "type": "cours", "title": "Nom de la ressource", "url": "https://...", "lang": "fr", "free": true, "level": "debutant" }
 ```
 
 Pour un lab, remplace `type` par `platform` (par exemple `"platform": "root-me"`).
+
+`level` est obligatoire sur chaque ressource et chaque lab : `"debutant"`, `"intermediaire"` ou `"avance"`. C'est ce qui s'affiche en badge dans l'app pour qu'un étudiant sache par quoi commencer quand une étape propose plusieurs liens — ce n'est pas le niveau scolaire (BTS/Licence) mais la difficulté réelle de la ressource elle-même : un wargame d'introduction est `debutant` même si l'étape vise des L3, un guide de référence dense ou des challenges avancés sont `avance` même en tronc commun.
 
 Avant d'ouvrir ta pull request :
 

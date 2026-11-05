@@ -58,6 +58,16 @@ abstract final class CpTrackColors {
       };
 }
 
+/// Couleur du niveau pédagogique d'une ressource ou d'un lab.
+abstract final class CpLevelColors {
+  static Color of(String? level) => switch (level) {
+        'debutant' => CpColors.primary,
+        'intermediaire' => CpColors.warning,
+        'avance' => CpColors.errorText,
+        _ => CpColors.textTertiary,
+      };
+}
+
 abstract final class CpRadius {
   static const tile = 10.0;
   static const button = 14.0;

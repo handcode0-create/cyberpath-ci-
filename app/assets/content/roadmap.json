@@ -1,6 +1,6 @@
 {
-  "version": "2026.11.4",
-  "updated": "2026-11-04",
+  "version": "2026.11.5",
+  "updated": "2026-11-05",
   "language": "fr",
   "tracks": [
     {
@@ -42,21 +42,24 @@
               "title": "TryHackMe · What is Networking?",
               "url": "https://tryhackme.com/room/whatisnetworking",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "video",
               "title": "Professor Messer · cours vidéo Network+",
               "url": "https://www.professormesser.com/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "cours",
               "title": "OpenClassrooms · Concevez votre réseau TCP/IP",
               "url": "https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -65,14 +68,16 @@
               "title": "Introductory Networking",
               "url": "https://tryhackme.com/room/introtonetworking",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "root-me",
               "title": "Challenges Réseau",
               "url": "https://www.root-me.org/fr/Challenges/Reseau/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Résoudre 5 challenges de la catégorie Réseau sur Root-Me."
@@ -98,14 +103,16 @@
               "title": "TryHackMe · Linux Fundamentals Part 1",
               "url": "https://tryhackme.com/room/linuxfundamentalspart1",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "cours",
               "title": "OpenClassrooms · Apprivoisez le terminal Linux pour naviguer dans votre système",
               "url": "https://openclassrooms.com/fr/courses/8957361-apprivoisez-le-terminal-linux-pour-naviguer-dans-votre-systeme",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -114,7 +121,8 @@
               "title": "Bandit, niveaux 0 à 10",
               "url": "https://overthewire.org/wargames/bandit/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "validation": "Atteindre le niveau 10 du wargame Bandit."
@@ -140,14 +148,16 @@
               "title": "VirtualBox",
               "url": "https://www.virtualbox.org/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "doc",
               "title": "Kali Linux · installation dans VirtualBox",
               "url": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [],
@@ -175,7 +185,8 @@
               "title": "Microsoft Learn · Active Directory : introduction aux services de domaine",
               "url": "https://learn.microsoft.com/fr-fr/shows/introtoad/01",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -184,7 +195,8 @@
               "title": "Windows Fundamentals 2",
               "url": "https://tryhackme.com/room/windowsfundamentals2x0x",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "validation": "Monter un contrôleur de domaine dans ton labo, y joindre un poste client et appliquer une GPO."
@@ -210,21 +222,24 @@
               "title": "Greg's Wiki · BashGuide",
               "url": "https://mywiki.wooledge.org/BashGuide",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "Manuel de référence GNU Bash",
               "url": "https://www.gnu.org/software/bash/manual/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "avance"
             },
             {
               "type": "cours",
               "title": "OpenClassrooms · Automatisez vos actions récurrentes avec des scripts Bash",
               "url": "https://openclassrooms.com/fr/courses/8961541-automatisez-vos-actions-recurrentes-avec-des-scripts-bash",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -233,14 +248,16 @@
               "title": "Bandit, niveaux 10 à 20",
               "url": "https://overthewire.org/wargames/bandit/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "platform": "root-me",
               "title": "Challenges App - Script",
               "url": "https://www.root-me.org/fr/Challenges/App-Script/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Écrire un script qui lit un fichier de logs et affiche les 10 adresses IP les plus fréquentes."
@@ -266,21 +283,24 @@
               "title": "Tutoriel officiel Python",
               "url": "https://docs.python.org/fr/3/tutorial/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "livre",
               "title": "Automate the Boring Stuff with Python",
               "url": "https://automatetheboringstuff.com/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "cours",
               "title": "OpenClassrooms · Apprenez les bases du langage Python",
               "url": "https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -289,7 +309,8 @@
               "title": "Challenges Programmation",
               "url": "https://www.root-me.org/fr/Challenges/Programmation/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Écrire un scanner de ports TCP simple et le tester uniquement sur ton labo."
@@ -315,7 +336,8 @@
               "title": "SecNumacadémie (ANSSI)",
               "url": "https://secnumacademie.gouv.fr/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -324,21 +346,24 @@
               "title": "Introduction",
               "url": "https://cryptohack.org/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "tryhackme",
               "title": "Encryption - Crypto 101",
               "url": "https://tryhackme.com/room/encryptioncrypto101",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "root-me",
               "title": "Challenges Cryptanalyse",
               "url": "https://www.root-me.org/fr/Challenges/Cryptanalyse/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "validation": "Résoudre 5 challenges de la catégorie Cryptanalyse sur Root-Me."
@@ -364,21 +389,24 @@
               "title": "OWASP Top 10",
               "url": "https://owasp.org/www-project-top-ten/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "cours",
               "title": "PortSwigger · Web Security Academy",
               "url": "https://portswigger.net/web-security",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "OWASP Top 10 2021 · traduction française officielle",
               "url": "https://top10.owasp.org/2021/fr/index.html",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -387,14 +415,16 @@
               "title": "OWASP Juice Shop",
               "url": "https://tryhackme.com/room/owaspjuiceshop",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "root-me",
               "title": "Challenges Web - Serveur",
               "url": "https://www.root-me.org/fr/Challenges/Web-Serveur/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Résoudre tous les labs de niveau Apprentice sur l'injection SQL de la Web Security Academy."
@@ -420,14 +450,16 @@
               "title": "roadmap.sh · Cyber Security",
               "url": "https://roadmap.sh/cyber-security",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "certification",
               "title": "ISC2 · Certified in Cybersecurity (CC)",
               "url": "https://www.isc2.org/certifications/cc",
               "lang": "en",
-              "free": false
+              "free": false,
+              "level": "debutant"
             }
           ],
           "labs": [],
@@ -472,7 +504,8 @@
               "title": "Wireshark User's Guide",
               "url": "https://www.wireshark.org/download/docs/Wireshark%20User's%20Guide.pdf",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -481,14 +514,16 @@
               "title": "Traffic Analysis Essentials",
               "url": "https://tryhackme.com/room/trafficanalysisessentials",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "cyberdefenders",
               "title": "Défis Network Forensics",
               "url": "https://cyberdefenders.org/blue-team-labs/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Analyser une capture et identifier l'adresse IP qui scanne le réseau, avec les ports visés."
@@ -514,14 +549,16 @@
               "title": "Microsoft · Sysmon (Sysinternals)",
               "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "Microsoft · activer et configurer Sysmon",
               "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/sysmon/how-to-enable-sysmon",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -549,14 +586,16 @@
               "title": "Wazuh · démarrage rapide",
               "url": "https://documentation.wazuh.com/current/quickstart.html",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "doc",
               "title": "Wazuh · guide de démonstration",
               "url": "https://documentation.wazuh.com/current/proof-of-concept-guide/index.html",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -584,7 +623,8 @@
               "title": "MITRE ATT&CK · matrice Enterprise",
               "url": "https://attack.mitre.org/matrices/enterprise/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -593,7 +633,8 @@
               "title": "Snort",
               "url": "https://tryhackme.com/room/snort",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Associer 5 alertes de ton SIEM à une technique ATT&CK, en justifiant chaque choix."
@@ -619,7 +660,8 @@
               "title": "ANSSI · Crise d'origine cyber, les clés d'une gestion opérationnelle",
               "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-gestion_crise_cyber.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -628,7 +670,8 @@
               "title": "Défis Blue Team",
               "url": "https://cyberdefenders.org/blue-team-labs/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "validation": "Résoudre un défi CyberDefenders et en tirer un rapport d'incident d'une page : chronologie, impact, actions recommandées."
@@ -666,7 +709,8 @@
               "title": "Nmap Network Scanning (livre officiel en ligne)",
               "url": "https://nmap.org/book/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -675,21 +719,24 @@
               "title": "Passive Reconnaissance",
               "url": "https://tryhackme.com/room/passiverecon",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "tryhackme",
               "title": "Active Reconnaissance",
               "url": "https://tryhackme.com/room/activerecon",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "platform": "tryhackme",
               "title": "Nmap",
               "url": "https://tryhackme.com/room/furthernmap",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "validation": "Cartographier ton labo avec Nmap : hôtes, ports ouverts, services et versions, dans un tableau."
@@ -716,14 +763,16 @@
               "title": "Network Services",
               "url": "https://tryhackme.com/room/networkservices",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "platform": "tryhackme",
               "title": "Network Services 2",
               "url": "https://tryhackme.com/room/networkservices2",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Pour 3 services de ton labo, rédiger une fiche : rôle du service, version relevée, configuration à risque éventuelle."
@@ -750,35 +799,40 @@
               "title": "NVD · base nationale des vulnérabilités (NIST)",
               "url": "https://nvd.nist.gov/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "CVE.org · programme CVE",
               "url": "https://www.cve.org/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "FIRST · guide du score CVSS",
               "url": "https://www.first.org/cvss/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "CISA · catalogue des vulnérabilités exploitées (KEV)",
               "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "Exploit-DB · archive de codes de démonstration",
               "url": "https://www.exploit-db.com/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "labs": [],
@@ -806,7 +860,8 @@
               "title": "OffSec · Metasploit Unleashed",
               "url": "https://www.offsec.com/metasploit-unleashed/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -815,7 +870,8 @@
               "title": "Starting Point (machines gratuites)",
               "url": "https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "validation": "Compromettre toutes les machines gratuites du Tier 0 de Starting Point."
@@ -841,7 +897,8 @@
               "title": "PortSwigger · Web Security Academy",
               "url": "https://portswigger.net/web-security",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -850,14 +907,16 @@
               "title": "Natas",
               "url": "https://overthewire.org/wargames/natas/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "platform": "root-me",
               "title": "Challenges Web - Client",
               "url": "https://www.root-me.org/fr/Challenges/Web-Client/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Atteindre le niveau 10 du wargame Natas."
@@ -884,14 +943,16 @@
               "title": "Linux Privilege Escalation",
               "url": "https://tryhackme.com/room/linprivesc",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "platform": "tryhackme",
               "title": "Windows PrivEsc",
               "url": "https://tryhackme.com/room/windows10privesc",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Terminer les deux salles d'élévation de privilèges, Linux et Windows."
@@ -917,7 +978,8 @@
               "title": "Documentation Python (fr) · tutoriel",
               "url": "https://docs.python.org/fr/3/tutorial/",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -926,7 +988,8 @@
               "title": "Bandit (scripts shell)",
               "url": "https://overthewire.org/wargames/bandit/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Écrire un script qui lit le résultat d'un scan de ton labo et en sort un tableau lisible (hôte, port, service). Idée d'exercice : un énumérateur de pages web pour ton propre site de test.",
@@ -953,7 +1016,8 @@
               "title": "MITRE ATT&CK · matrice Enterprise",
               "url": "https://attack.mitre.org/matrices/enterprise/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -992,7 +1056,8 @@
               "title": "Autopsy",
               "url": "https://www.sleuthkit.org/autopsy/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [
@@ -1001,7 +1066,8 @@
               "title": "Défis Endpoint Forensics",
               "url": "https://cyberdefenders.org/blue-team-labs/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Analyser une image disque de défi avec Autopsy et reconstituer la chronologie des actions de l'utilisateur."
@@ -1028,7 +1094,8 @@
               "title": "Windows Forensics 1",
               "url": "https://tryhackme.com/room/windowsforensics1",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "validation": "Terminer la salle Windows Forensics 1 et lister 5 artefacts utiles avec leur emplacement."
@@ -1054,7 +1121,8 @@
               "title": "Volatility 3 · documentation",
               "url": "https://volatility3.readthedocs.io/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "labs": [
@@ -1063,7 +1131,8 @@
               "title": "Défis Endpoint Forensics (mémoire)",
               "url": "https://cyberdefenders.org/blue-team-labs/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "validation": "Analyser une image mémoire avec Volatility 3 et identifier le processus malveillant et sa connexion réseau."
@@ -1089,7 +1158,8 @@
               "title": "Wireshark User's Guide",
               "url": "https://www.wireshark.org/download/docs/Wireshark%20User's%20Guide.pdf",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [
@@ -1098,7 +1168,8 @@
               "title": "Défis Network Forensics",
               "url": "https://cyberdefenders.org/blue-team-labs/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "validation": "Résoudre un défi Network Forensics et lister les indicateurs de compromission trouvés."
@@ -1124,7 +1195,8 @@
               "title": "ANSSI · Crise d'origine cyber, les clés d'une gestion opérationnelle",
               "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-gestion_crise_cyber.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -1163,14 +1235,16 @@
               "title": "ANSSI · Guide d'hygiène informatique",
               "url": "https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "doc",
               "title": "ANSSI · La cybersécurité pour les TPE/PME en 13 questions",
               "url": "https://messervices.cyber.gouv.fr/documents-guides/20241212_np_anssi_guide_tpe-pme_v2.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [],
@@ -1197,21 +1271,24 @@
               "title": "Loi n° 2013-451 sur la lutte contre la cybercriminalité",
               "url": "https://civlii.laws.africa/en/akn/ci/act/2013/451/fra@2025-01-30/source",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "ARTCI · protection des données",
               "url": "https://artci.ci/en/data-protection/",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "debutant"
             },
             {
               "type": "doc",
               "title": "Conseil de l'Europe · politiques cybercriminalité de la Côte d'Ivoire",
               "url": "https://www.coe.int/fr/web/octopus/-/cote-ivoire",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -1238,7 +1315,8 @@
               "title": "ANSSI · La méthode EBIOS Risk Manager, le guide",
               "url": "https://messervices.cyber.gouv.fr/guides/la-methode-ebios-risk-manager-le-guide",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "avance"
             }
           ],
           "labs": [],
@@ -1265,21 +1343,24 @@
               "title": "NIST Cybersecurity Framework 2.0",
               "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
               "lang": "en",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             },
             {
               "type": "doc",
               "title": "ISO · présentation d'ISO/IEC 27001",
               "url": "https://www.iso.org/standard/27001",
               "lang": "en",
-              "free": false
+              "free": false,
+              "level": "debutant"
             },
             {
               "type": "doc",
               "title": "NIST · Cadre de Cybersécurité (CSF) 2.0, traduction officielle (PDF)",
               "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.fre.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "intermediaire"
             }
           ],
           "labs": [],
@@ -1307,7 +1388,8 @@
               "title": "ANSSI · Guide de la charte d'utilisation des moyens informatiques",
               "url": "https://messervices.cyber.gouv.fr/documents-guides/guide-charte-utilisation-moyens-informatiques-outils-numeriques_anssi.pdf",
               "lang": "fr",
-              "free": true
+              "free": true,
+              "level": "debutant"
             }
           ],
           "labs": [],

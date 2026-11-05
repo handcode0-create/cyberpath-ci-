@@ -14,6 +14,7 @@ import '../home_shell.dart';
 import '../offensive/methode_screen.dart';
 import '../offensive/outils_screen.dart';
 import '../offensive/services_screen.dart';
+import 'overview_screen.dart';
 import 'step_detail_screen.dart';
 
 class ParcoursScreen extends ConsumerStatefulWidget {
@@ -67,7 +68,21 @@ class _ParcoursScreenState extends ConsumerState<ParcoursScreen> {
                   ],
                 ),
                 const SizedBox(height: CpSpace.lg),
-                PageHeader(title: 'Ton parcours', subtitle: subtitle),
+                PageHeader(
+                  title: 'Ton parcours',
+                  subtitle: subtitle,
+                  trailing: Semantics(
+                    button: true,
+                    label: "Vue d'ensemble de tout le parcours",
+                    child: IconButton(
+                      tooltip: "Vue d'ensemble",
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(builder: (_) => OverviewScreen(content: widget.content)),
+                      ),
+                      icon: const Icon(Icons.timeline_outlined, color: CpColors.text),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: CpSpace.lg),
                 _ProgressCard(view: coreView),
                 const SizedBox(height: CpSpace.lg),

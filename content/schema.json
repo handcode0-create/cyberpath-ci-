@@ -38,14 +38,15 @@
   "$defs": {
     "link": {
       "type": "object",
-      "required": ["title", "url", "lang", "free"],
+      "required": ["title", "url", "lang", "free", "level"],
       "properties": {
         "type": { "enum": ["cours", "video", "doc", "livre", "outil", "carte", "certification"] },
         "platform": { "type": "string" },
         "title": { "type": "string" },
         "url": { "type": "string", "pattern": "^https://" },
         "lang": { "enum": ["fr", "en"] },
-        "free": { "type": "boolean" }
+        "free": { "type": "boolean" },
+        "level": { "enum": ["debutant", "intermediaire", "avance"] }
       },
       "additionalProperties": false
     },

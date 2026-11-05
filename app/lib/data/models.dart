@@ -31,6 +31,7 @@ class LinkItem {
     required this.free,
     this.type,
     this.platform,
+    this.level,
   });
 
   final String title;
@@ -40,7 +41,18 @@ class LinkItem {
   final String? type;
   final String? platform;
 
+  /// « debutant », « intermediaire » ou « avance ». Indique par quoi
+  /// commencer quand une étape propose plusieurs ressources ou labs.
+  final String? level;
+
   bool get isLab => platform != null;
+
+  String? get levelLabel => switch (level) {
+        'debutant' => 'Débutant',
+        'intermediaire' => 'Intermédiaire',
+        'avance' => 'Avancé',
+        _ => null,
+      };
 
   factory LinkItem.fromJson(Map<String, dynamic> json) => LinkItem(
         title: json['title'] as String,
@@ -49,6 +61,7 @@ class LinkItem {
         free: json['free'] as bool,
         type: json['type'] as String?,
         platform: json['platform'] as String?,
+        level: json['level'] as String?,
       );
 }
 

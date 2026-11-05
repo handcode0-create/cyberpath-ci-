@@ -202,9 +202,10 @@ class _LinkRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final kind = link.isLab ? 'Lab' : _typeLabel(link.type);
     final meta = [kind, if (link.free) 'gratuit', link.lang.toUpperCase()].join(' · ');
+    final levelLabel = link.levelLabel;
     return Semantics(
       link: true,
-      label: '${link.title}, $meta, ouvre le navigateur',
+      label: [link.title, if (levelLabel != null) 'niveau $levelLabel', meta, 'ouvre le navigateur'].join(', '),
       excludeSemantics: true,
       child: InkWell(
         onTap: () => openExternal(context, link.url),
@@ -220,8 +221,16 @@ class _LinkRow extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(link.title, style: cpText(15, weight: FontWeight.w500)),
-                    const SizedBox(height: 2),
-                    Text(meta, style: CpType.small()),
+                    const SizedBox(height: 4),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 2,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        if (levelLabel != null) _LevelBadge(level: link.level, label: levelLabel),
+                        Text(meta, style: CpType.small()),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -252,6 +261,30 @@ class _LinkRow extends StatelessWidget {
         'certification' => Icons.workspace_premium_outlined,
         _ => Icons.menu_book_outlined,
       };
+}
+
+class _LevelBadge extends StatelessWidget {
+  const _LevelBadge({required this.level, required this.label});
+
+  final String? level;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = CpLevelColors.of(level);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.14),
+        borderRadius: BorderRadius.circular(99),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Text(
+        label,
+        style: cpText(11, weight: FontWeight.w600, color: color),
+      ),
+    );
+  }
 }
 
 class _ValidationCriterion extends StatelessWidget {
